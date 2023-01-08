@@ -24,17 +24,11 @@ header h1 {
     padding-top: 5px;
     height: 35px;
 }
-
+/* 
 header nav {
     float: right;
-}
+} */
 
-header nav ul li {
-    justify-content: end;
-    display: inline-block;
-    padding: 5px 2px;
-    margin: 0;
-}
 
 .home {
     color: var(--white);
@@ -47,3 +41,4 @@ header nav ul li {
 .fundamentals:hover {
     color: rgb(230, 222, 198);
 }
+
