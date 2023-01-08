@@ -24,11 +24,6 @@ header h1 {
     padding-top: 5px;
     height: 35px;
 }
-/* 
-header nav {
-    float: right;
-} */
-
 
 .home {
     color: var(--white);
