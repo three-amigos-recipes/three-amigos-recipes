@@ -24,6 +24,7 @@ $('.add-ingredient-btn').click(function (event) {
     console.log(inputText);
     ingredientListArray.push(inputText);
     var ingredientsList = ingredientListArray.join(",");
+    $('.ingredient-input').val("");
     console.log(ingredientsList);
     return ingredientsList;
 });
