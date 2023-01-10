@@ -1,4 +1,10 @@
-/* .mixing-pot {
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+* {
+  font-family: "Poppins", sans-serif;
+}
+
+.mixing-pot {
     text-align: center;
 }
 
@@ -26,7 +32,7 @@ form {
     opacity: 0.7; 
   }
 
-  .ingredients p {
+  .ingredients-display {
     background: gray;
     display: block;
     height: 45px;
@@ -39,7 +45,7 @@ form {
 
   }
 
-  .results p {
+  .results ul {
     background: gray;
     display: block;
     height: 300px;
@@ -49,4 +55,4 @@ form {
 
   .about {
     margin-top: 200px;
-  } */
+  }
