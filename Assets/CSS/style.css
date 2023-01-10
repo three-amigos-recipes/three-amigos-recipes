@@ -39,7 +39,7 @@ form {
 
   }
 
-  .results p {
+  .results ul {
     background: gray;
     display: block;
     height: 300px;
