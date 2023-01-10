@@ -6,6 +6,11 @@
 
 .mixing-pot {
     text-align: center;
+    margin-top: 70px;
+}
+
+.mixing-pot h1 {
+  margin-bottom: 25px;
 }
 
 form {
@@ -34,25 +39,27 @@ form {
 
   .ingredients-display {
     background: gray;
-    display: block;
     height: 45px;
     width: 425px;
-    margin-left: 500px;
+    margin: auto;
+    margin-top: 5px;
+    display: block;
   }
 
   .results {
     text-align: center;
-
+    margin-top: 30px;
   }
 
   .results ul {
     background: gray;
-    display: block;
+    display: inline-block;
     height: 300px;
     width: 515px;
-    margin-left: 450px;
   }
 
   .about {
     margin-top: 200px;
   }
+
+
