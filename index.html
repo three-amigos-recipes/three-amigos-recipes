@@ -7,35 +7,43 @@
     <meta name="viewport" content="width=device-width, inital-scale=1.0">
     <title>3 Amigos Recipes</title>
     <link rel="stylesheet" href="./Assets/CSS/normalize.css">
-    <link href="//cdn.muicss.com/mui-0.10.3/css/mui.min.css" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
     <link rel="stylesheet" href="./Assets/CSS/style.css">
 </head>
 
-<body class=" background-color: mui-color('red', '50')">
-    <header class="mui-appbar mui--text-light-secondary " style="background-color: #444;">
-        <a href="About.html"><img src="./Assets/images/Three Amigos logo.png" height="50px" style="margin: 15px 0 -20px 20px;" class="logo"
-            alt="line art of a knife and fork stacked on top of a plate" /></a>
+<body class="">
+    <header class="">
 
 
-        <nav>
-            <ul class="mui-list--inline mui--text-right mui--align-top" style="margin: -50px 5px 0 0; padding: 15px;" >
-                <li>
-                    <a href="index.html"><button class="home mui-btn mui--text-light-secondary"
-                            style="background-color: #444;"> Home</button></a>
-                </li>
-                <li>
-                    <a href="New-Recipe.html"><button class="try mui-btn mui--text-light-secondary"
-                            style="background-color: #444;">Try Something New</button></a>
-                </li>
-                <li>
-                    <a href="Previous.html"><button class="previous mui-btn mui--text-light-secondary"
-                            style="background-color: #444;">Previous Recipes</button></a>
-                </li>
-                <li>
-                    <a href="fundamentals.html"><button class="fundamentals mui-btn mui--text-light-secondary"
-                            style="background-color: #444;">Cooking Fundamentals</button></a>
-                </li>
-            </ul>
+
+        <nav class="navbar is-danger has-shadow" role="navigation" aria-label="main navigation">
+            <div class="navbar-brand">
+                <a class="navbar-item" href="./About.html">
+                    <img src="./Assets/images/Three Amigos logo.png"
+                        alt="Bulma: Free, open source, and modern CSS framework based on Flexbox" width="35"
+                        height="50">
+                </a>
+            </div>
+            <div class="navbar-menu">
+                <div class="navbar-end">
+
+
+                    <a class="navbar-item" href="index.html">Home</a>
+
+
+                    <a class="navbar-item" href="New-Recipe.html"> Try Something New</a>
+
+
+                    <a class="navbar-item" href="Previous.html"> Previous Recipes</a>
+
+
+                    <a class="navbar-item" href="fundamentals.html">Cooking Fundamentals</a>
+
+
+                </div>
+            </div>
+
+
         </nav>
 
 
@@ -43,33 +51,33 @@
     </header>
 
     <main>
-        <div class="mixing-pot" id="mixing-pot">
+        <div class="">
             <h1>Mixing Pot</h1>
             <p>What ingredients do you have?</p>
-        <form id="form"> 
-             <input type="search" id="query" name="q" placeholder="ingredients...">
-             <button>Search</button>
-        </form>
+            <form id="form">
+                <input type="search" id="query" name="q" placeholder="ingredients...">
+                <button>Search</button>
+            </form>
         </div>
- 
+
         <div class="ingredients" id="ingredients">
             <p></p>
         </div>
- 
+
         <div class="results" id="results">
             <h1>Results</h1>
             <ul class="results-list"></ul>
         </div>
- 
- 
- 
+
+
+
         <div class="about" id="about">
             <h1>About Three Amigos Recipes</h1>
         </div>
- 
-         
+
+
     </main>
- 
+
     <footer class="footer" id="footer">
         <p>Github</p>
     </footer>
