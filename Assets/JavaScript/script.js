@@ -15,15 +15,22 @@ $(document).ready(function () {
 
 var ingredientListArray = [];
 
+// Add ingredient to ingredients list
 $('.add-ingredient-btn').click(function (event) {
     event.preventDefault();
-    
+    // Takes the value of the input box and adds it to a variable
     var inputText = $('.ingredient-input').val();
     console.log(inputText);
+    // stores that value in an array
     ingredientListArray.push(inputText);
+    // Array is converted to string for injecting into API call
     var ingredientsList = ingredientListArray.join(",");
+    // Clears input field
     $('.ingredient-input').val("");
-    getRecipeIds(ingredientsList);
+    // Creates div to display ingredient on webpage
+    var ingredientName = document.createElement('div');
+    ingredientName.textContent = inputText;
+    document.querySelector('.ingredients-display').append(ingredientName);
 });
 
 // $('.results-btn').click(function (ingredientsList) {
