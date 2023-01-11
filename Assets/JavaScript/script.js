@@ -29,7 +29,14 @@ $('.add-ingredient-btn').click(function (event) {
     $('.ingredient-input').val("");
     // Creates div to display ingredient on webpage
     var ingredientName = document.createElement('div');
+    ingredientName.id = 'ingredientName';
     ingredientName.textContent = inputText;
+
+    var removeBtn = document.createElement('button');
+    removeBtn.textContent = 'X';
+    removeBtn.id = 'remove-btn';
+
+    ingredientName.appendChild(removeBtn);
     document.querySelector('.ingredients-display').append(ingredientName);
 });
 
