@@ -23,7 +23,7 @@ function getRandom(id) {
     const options = {
         method: 'GET',
         headers: {
-            'X-RapidAPI-Key': '26178cbbd9msha16f9517382f54ap17b857jsn1d58db5175dd',
+            'X-RapidAPI-Key': '46bd054f8cmsh16bbe6b909a599dp11e469jsnb89084f34eb0',
             'X-RapidAPI-Host': 'spoonacular-recipe-food-nutrition-v1.p.rapidapi.com'
         }
     };
