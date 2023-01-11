@@ -23,7 +23,7 @@ form {
     align-items: center;
   }
 
-  input {
+input {
     all: unset;
     font: 16px system-ui;
     color: #fff;
@@ -32,12 +32,12 @@ form {
     padding: 6px 10px;
   }
 
-  ::placeholder {
+::placeholder {
     color: #fff;
     opacity: 0.7; 
   }
 
-  .ingredients-display {
+.ingredients-display {
     background: gray;
     height: 45px;
     width: 425px;
@@ -46,19 +46,19 @@ form {
     display: block;
   }
 
-  .results {
+.results {
     text-align: center;
     margin-top: 30px;
   }
 
-  .results ul {
+.results ul {
     background: gray;
     display: inline-block;
     height: 300px;
     width: 515px;
   }
 
-  .about {
+.about {
     margin-top: 200px;
   }
 
@@ -74,4 +74,14 @@ margin-top: 60px;
   width: 1100px;
   display: block;
   margin-top: 40px;
+}
+
+.navbar-brand {
+  height: 80px;
+}
+
+.navbar-item img {
+  max-height: 3.5rem;
+  height: 120px;
+  width: 60px;
 }
