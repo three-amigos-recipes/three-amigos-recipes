@@ -13,8 +13,6 @@ $(document).ready(function () {
 });
 
 
-
-
 var ingredientListArray = [];
 
 $('.add-ingredient-btn').click(function (event) {
@@ -25,17 +23,15 @@ $('.add-ingredient-btn').click(function (event) {
     ingredientListArray.push(inputText);
     var ingredientsList = ingredientListArray.join(",");
     $('.ingredient-input').val("");
-    console.log(ingredientsList);
-    return ingredientsList;
+    getRecipeIds(ingredientsList);
 });
 
 // $('.results-btn').click(function (ingredientsList) {
 //     getRecipes(ingredientsList);
 // })
 
-
-// API CALL
-function getRecipes(ingredient) {
+// API call function to search for recipes via ingredients and return recipe ids
+function getRecipeIds(ingredient) {
 
 
     const options = {
@@ -48,10 +44,31 @@ function getRecipes(ingredient) {
 
 
 
-    fetch('https://spoonacular-recipe-food-nutrition-v1.p.rapidapi.com/recipes/findByIngredients?ingredients=' + ingredientList + '&number=5&ignorePantry=true&ranking=1', options)
+    fetch('https://spoonacular-recipe-food-nutrition-v1.p.rapidapi.com/recipes/findByIngredients?ingredients=' + ingredient + '&number=5&ignorePantry=true&ranking=1', options)
         .then(response => response.json())
-        .then(response => console.log(response))
+        .then(data => {
+            console.log(data)
+            var recipeIds = [];
+            for (var i = 0; i < data.length; i++) {
+                recipeIds.push(data[i].id);
+            }
+            console.log(recipeIds);
+        })
         .catch(err => console.error(err));
 }
 
+// Function to get recipe information using the recipe ID(s)
+function getRecipeInfo(ids) {
+    const options = {
+	method: 'GET',
+	headers: {
+		'X-RapidAPI-Key': '46bd054f8cmsh16bbe6b909a599dp11e469jsnb89084f34eb0',
+		'X-RapidAPI-Host': 'spoonacular-recipe-food-nutrition-v1.p.rapidapi.com'
+	}
+};
 
+fetch('https://spoonacular-recipe-food-nutrition-v1.p.rapidapi.com/recipes/' + ids + '/information', options)
+	.then(response => response.json())
+	.then(response => console.log(response))
+	.catch(err => console.error(err));
+}
