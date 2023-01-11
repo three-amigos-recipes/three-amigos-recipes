@@ -19,7 +19,6 @@ $('#random-recipe-btn').click(function () {
 
 // API Call
 function getRandom(id) {
-
     const options = {
         method: 'GET',
         headers: {
@@ -28,12 +27,25 @@ function getRandom(id) {
         }
     };
 
+    // Clears the previous recipe before displaying the new one
+    document.querySelector('.card').innerHTML = '';
 
     fetch('https://spoonacular-recipe-food-nutrition-v1.p.rapidapi.com/recipes/' + id + '/information', options)
         // Checks the response
         .then(response => response.json())
-        // Creates elements for the response title, image, readyInMinutes and sourceUrl
+
         .then(response => {
+
+            // Asks you to try again if the page is invalid
+            if (!response.ok) {
+                var errorMsg = document.createElement('div')
+                errorMsg.textContent = 'Please try again.'
+                document.querySelector('.card').append(errorMsg)
+
+            } else {
+
+            }
+            // Creates elements for the response title, image, readyInMinutes and sourceUrl if the recipe page has a valid id
             var title = document.createElement('div')
             title.textContent = 'Title: ' + response.title
 
@@ -43,18 +55,17 @@ function getRandom(id) {
             var time = document.createElement('div')
             time.textContent = 'Cook time: ' + response.readyInMinutes + ' minutes!'
 
+            var instructions = document.createElement('div')
+            instructions.textContent = 'Instructions: ' + response.instructions
+
             var url = document.createElement('a')
             url.setAttribute('href', response.sourceUrl)
             url.textContent = response.title
 
             // Appends the elements created 
-            document.querySelector('.card').append(title, img, time, url)
+            document.querySelector('.card').append(title, img, instructions, time, url)
+
         })
         .catch(err => console.error(err));
+    return;
 };
-
-
-
-
-
-
