@@ -10,20 +10,30 @@ $(document).ready(function () {
     });
 });
 
+let storedRecipes = localStorage.getItem('recipes');
+let existingRecipes = storedRecipes ? JSON.parse(storedRecipes) : [];
 
-// Forloop for persisting the data onto HMTL page
-for (var i = 0; i < localStorage.length; i++) {
+existingRecipes.forEach(function (recipe) {
+    // display the recipe information, for example by creating and appending elements to the DOM.
+    let recipeTitle = document.createElement('h2');
+    recipeTitle.innerText = recipe.title;
+    recipeTitle.id = 'title'
+    let recipeImg = document.createElement('img')
+    recipeImg.setAttribute('src', recipe.image)
+    recipeImg.id = 'i'
+    let recipeUrl = document.createElement('a');
+    recipeUrl.setAttribute('href', recipe.sourceUrl);
+    recipeUrl.innerText = recipe.sourceUrl;
+    recipeUrl.id = 'link'
 
-    var recipe = localStorage.getItem(i);
-    // console.log(localStorage.getItem("recipe"));
-    var recipeName = $(".list-group").addClass("list-group-item");
 
-    recipeName.append("<li>" + recipe + "</li>");
-}
+
+    document.body.append(recipeTitle, recipeImg, recipeUrl);
+});
+
 
 
 // Stack the list in a column
-// Make sure I am pull one item from local storage and displaying the next one
-// Give each item an id so it can be styled
+
 
 // See about displaying a certain amount and adding a display more option?
