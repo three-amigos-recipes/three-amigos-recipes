@@ -12,7 +12,7 @@ $(document).ready(function () {
     });
 });
 
-
+var ingredientsList = '';
 var ingredientListArray = [];
 let counter = 0;
 let ingredientAdded = false;
@@ -54,6 +54,13 @@ $('.add-ingredient-btn').click(function (event) {
             recipeSearchBtn.textContent = 'Find a Recipe!';
             recipeSearchBtn.id = 'recipe-search-btn';
             document.querySelector('.results').append(recipeSearchBtn);
+
+            $('#recipe-search-btn').click(function(event) {
+                event.preventDefault();
+                
+                console.log('test222');
+            })
+
             ingredientAdded = true;
         }
 
@@ -82,11 +89,7 @@ const buttonChecker = document.getElementById('#recipe-search-btn');
 
 
 
-$('#recipe-search-btn').click(function(event) {
-            event.preventDefault();
-            
-            console.log('test');
-        })
+
     
 
 
