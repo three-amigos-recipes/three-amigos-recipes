@@ -36,8 +36,7 @@ $('.add-ingredient-btn').click(function (event) {
     } else {
         // stores that value in an array
         ingredientListArray.push(inputText);
-        // Array is converted to string for injecting into API call
-        var ingredientsList = ingredientListArray.join(",");
+        
         // Clears input field
         $('.ingredient-input').val("");
         // Creates div to display ingredient on webpage
@@ -57,8 +56,10 @@ $('.add-ingredient-btn').click(function (event) {
 
             $('#recipe-search-btn').click(function(event) {
                 event.preventDefault();
-                
-                console.log('test222');
+                // Array is converted to string for injecting into API call
+                var ingredientsList = ingredientListArray.join(",");
+
+                getRecipeIds(ingredientsList);
             })
 
             ingredientAdded = true;
@@ -74,9 +75,23 @@ $('.add-ingredient-btn').click(function (event) {
 // Remove ingredients when X is clicked
 $('.ingredients-display').click(function (event) {
     event.preventDefault();
+    // Identifies the unique div that has been clicked on
     var individualDiv = event.target;
-    // console.log(individualDiv);
+    
+    // The following two lines get the text content of the div that was clicked on.
+    // Then filters out the "    X" at the end of the string.
+    targetText = event.target.textContent;
+    editedTargetText = targetText.split('\xa0')[0];
 
+    // This code will remove the clicked on div's text content from the array of ingredients
+    let valueIndex = ingredientListArray.indexOf(editedTargetText);
+    if (valueIndex !== -1) {
+        ingredientListArray.splice(valueIndex, 1);
+    }
+
+    console.log(editedTargetText);
+    console.log(ingredientListArray);
+    
     individualDiv.remove();
 
     if (!document.querySelector('.ingredientTag')) {
