@@ -100,15 +100,6 @@ $('.ingredients-display').click(function (event) {
     }
 })
 
-const buttonChecker = document.getElementById('#recipe-search-btn');
-
-
-
-
-    
-
-
-
 
 // API call function to search for recipes via ingredients and return recipe ids
 function getRecipeIds(ingredient) {
@@ -132,7 +123,9 @@ function getRecipeIds(ingredient) {
             for (var i = 0; i < data.length; i++) {
                 recipeIds.push(data[i].id);
             }
-            console.log(recipeIds);
+            for (var j = 0; j < recipeIds.length; j++) {
+                getRecipeInfo(recipeIds[j]);
+            }
         })
         .catch(err => console.error(err));
 }
@@ -149,6 +142,31 @@ function getRecipeInfo(ids) {
 
 fetch('https://spoonacular-recipe-food-nutrition-v1.p.rapidapi.com/recipes/' + ids + '/information', options)
 	.then(response => response.json())
-	.then(response => console.log(response))
+	.then(function(response) {
+
+        // Creates elements for the response title, image, readyInMinutes and sourceUrl if the recipe page has a valid id
+        var title = document.createElement('div')
+        title.textContent = response.title
+        title.id = 'title'
+
+        var img = document.createElement('img')
+        img.setAttribute('src', response.image)
+
+        var time = document.createElement('div')
+        time.textContent = 'Cook time: ' + response.readyInMinutes + ' minutes!'
+        time.id = 'time'
+
+        var instructions = document.createElement('div')
+        instructions.textContent = 'Instructions: ' + response.instructions
+        instructions.id = 'instructions'
+
+        var url = document.createElement('a')
+        url.setAttribute('href', response.sourceUrl)
+        url.textContent = response.title
+        url.id = 'url'
+        // Appends the elements created 
+        document.querySelector('.results').append(title, img, instructions, time, url)
+    
+    })
 	.catch(err => console.error(err));
 }
