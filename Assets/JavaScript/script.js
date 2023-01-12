@@ -12,7 +12,7 @@ $(document).ready(function () {
     });
 });
 
-
+var ingredientsList = '';
 var ingredientListArray = [];
 let counter = 0;
 let ingredientAdded = false;
@@ -36,8 +36,7 @@ $('.add-ingredient-btn').click(function (event) {
     } else {
         // stores that value in an array
         ingredientListArray.push(inputText);
-        // Array is converted to string for injecting into API call
-        var ingredientsList = ingredientListArray.join(",");
+        
         // Clears input field
         $('.ingredient-input').val("");
         // Creates div to display ingredient on webpage
@@ -54,8 +53,19 @@ $('.add-ingredient-btn').click(function (event) {
             recipeSearchBtn.textContent = 'Find a Recipe!';
             recipeSearchBtn.id = 'recipe-search-btn';
             document.querySelector('.results').append(recipeSearchBtn);
+
+            $('#recipe-search-btn').click(function(event) {
+                event.preventDefault();
+                // Array is converted to string for injecting into API call
+                var ingredientsList = ingredientListArray.join(",");
+
+                getRecipeIds(ingredientsList);
+            })
+
             ingredientAdded = true;
         }
+
+        return ingredientsList;
     }
     
 });
@@ -65,9 +75,23 @@ $('.add-ingredient-btn').click(function (event) {
 // Remove ingredients when X is clicked
 $('.ingredients-display').click(function (event) {
     event.preventDefault();
+    // Identifies the unique div that has been clicked on
     var individualDiv = event.target;
-    // console.log(individualDiv);
+    
+    // The following two lines get the text content of the div that was clicked on.
+    // Then filters out the "    X" at the end of the string.
+    targetText = event.target.textContent;
+    editedTargetText = targetText.split('\xa0')[0];
 
+    // This code will remove the clicked on div's text content from the array of ingredients
+    let valueIndex = ingredientListArray.indexOf(editedTargetText);
+    if (valueIndex !== -1) {
+        ingredientListArray.splice(valueIndex, 1);
+    }
+
+    console.log(editedTargetText);
+    console.log(ingredientListArray);
+    
     individualDiv.remove();
 
     if (!document.querySelector('.ingredientTag')) {
@@ -75,7 +99,6 @@ $('.ingredients-display').click(function (event) {
         ingredientAdded = false;
     }
 })
-
 
 
 // API call function to search for recipes via ingredients and return recipe ids
@@ -100,7 +123,9 @@ function getRecipeIds(ingredient) {
             for (var i = 0; i < data.length; i++) {
                 recipeIds.push(data[i].id);
             }
-            console.log(recipeIds);
+            for (var j = 0; j < recipeIds.length; j++) {
+                getRecipeInfo(recipeIds[j]);
+            }
         })
         .catch(err => console.error(err));
 }
@@ -117,6 +142,27 @@ function getRecipeInfo(ids) {
 
 fetch('https://spoonacular-recipe-food-nutrition-v1.p.rapidapi.com/recipes/' + ids + '/information', options)
 	.then(response => response.json())
-	.then(response => console.log(response))
+	.then(function(response) {
+
+        // Creates elements for the response title, image, readyInMinutes and sourceUrl if the recipe page has a valid id
+        var title = document.createElement('div')
+        title.textContent = response.title
+        title.id = 'title'
+
+        var img = document.createElement('img')
+        img.setAttribute('src', response.image)
+
+        var time = document.createElement('div')
+        time.textContent = 'Cook time: ' + response.readyInMinutes + ' minutes!'
+        time.id = 'time'
+
+        var url = document.createElement('a')
+        url.setAttribute('href', response.sourceUrl)
+        url.textContent = response.title
+        url.id = 'url'
+        // Appends the elements created 
+        document.querySelector('.results').append(title, img, time, url)
+    
+    })
 	.catch(err => console.error(err));
 }
