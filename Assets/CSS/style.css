@@ -145,4 +145,22 @@ margin-top: 60px;
   padding: 5px 50px;
   color: white;
   border: 1px solid grey;
+  margin-top: 30px;
+}
+
+.results #title {
+  margin: 50px 0;
+  background-color: rgb(241, 60, 60);
+  color: white;
+  padding: 10px 15%;
+  font-size: 40px;
+}
+
+.results img {
+  background-color: lightgrey;
+  margin-bottom: 20px;
+}
+
+.results a {
+  margin-bottom: 50px;
 }
