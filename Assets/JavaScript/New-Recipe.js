@@ -35,30 +35,33 @@ function getRandom(id) {
         // Checks the response
         .then(response => response.json())
 
-        .then(function(response) {
+        .then(function (response) {
 
             // Asks you to try again if the page is invalid
-            console.log(response)
+
             if (response.status) {
                 getRandom(Math.floor((Math.random()) * 750000));
             } else {
                 // Creates elements for the response title, image, readyInMinutes and sourceUrl if the recipe page has a valid id
                 var title = document.createElement('div')
-                title.textContent = 'Title: ' + response.title
-                
+                title.textContent = response.title
+                title.id = 'title'
+
                 var img = document.createElement('img')
                 img.setAttribute('src', response.image)
 
                 var time = document.createElement('div')
                 time.textContent = 'Cook time: ' + response.readyInMinutes + ' minutes!'
+                time.id = 'time'
 
                 var instructions = document.createElement('div')
                 instructions.textContent = 'Instructions: ' + response.instructions
+                instructions.id = 'instructions'
 
                 var url = document.createElement('a')
                 url.setAttribute('href', response.sourceUrl)
                 url.textContent = response.title
-
+                url.id = 'url'
                 // Appends the elements created 
                 document.querySelector('.card').append(title, img, instructions, time, url)
             }
