@@ -56,6 +56,8 @@ $('.add-ingredient-btn').click(function (event) {
             document.querySelector('.results').append(recipeSearchBtn);
             ingredientAdded = true;
         }
+
+        return ingredientsList;
     }
     
 });
@@ -75,6 +77,18 @@ $('.ingredients-display').click(function (event) {
         ingredientAdded = false;
     }
 })
+
+const buttonChecker = document.getElementById('#recipe-search-btn');
+
+
+
+$('#recipe-search-btn').click(function(event) {
+            event.preventDefault();
+            
+            console.log('test');
+        })
+    
+
 
 
 
