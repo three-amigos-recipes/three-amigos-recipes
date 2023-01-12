@@ -15,7 +15,8 @@
 
 form {
   background-color: #4654e1;
-  width: 500px;
+  max-width: 550px;
+  width: 90%;
   height: 44px;
   border-radius: 5px;
   display: inline-flex;
@@ -40,15 +41,19 @@ input {
 
 .ingredients-display {
   height: auto;
-  width: 50%;
+  max-width: 450px;
+  width: 80%;
   margin: auto;
   margin-top: 5px;
   display: flex;
   justify-content: space-evenly;
+  flex-direction: row;
+  flex-wrap: wrap;
 }
 
 .ingredients-display div {
   background-color: rgb(241, 60, 60);
+  color: white;
   border-radius: 10px;
   padding-left: 10px;
   margin: 10px 0 0 10px;
