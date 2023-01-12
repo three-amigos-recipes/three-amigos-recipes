@@ -14,6 +14,7 @@ $(document).ready(function () {
 
 
 var ingredientListArray = [];
+let counter = 0;
 
 // Add ingredient to ingredients list
 $('.add-ingredient-btn').click(function (event) {
@@ -28,8 +29,10 @@ $('.add-ingredient-btn').click(function (event) {
     // Clears input field
     $('.ingredient-input').val("");
     // Creates div to display ingredient on webpage
+    counter++;
     var ingredientName = document.createElement('div');
-    ingredientName.id = 'ingredientName';
+    ingredientName.className = 'ingredientTag';
+    ingredientName.id = 'ingredientName' + counter;
     ingredientName.textContent = inputText;
 
     var removeBtn = document.createElement('button');
@@ -39,6 +42,20 @@ $('.add-ingredient-btn').click(function (event) {
     ingredientName.appendChild(removeBtn);
     document.querySelector('.ingredients-display').append(ingredientName);
 });
+
+
+
+// Remove ingredients when X is clicked
+$('.ingredients-display').click(function (event) {
+    event.preventDefault();
+    var individualDiv = event.target;
+    // console.log(individualDiv);
+
+    individualDiv.remove();
+    
+})
+
+
 
 // $('.results-btn').click(function (ingredientsList) {
 //     getRecipes(ingredientsList);
