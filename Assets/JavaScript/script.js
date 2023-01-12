@@ -15,32 +15,49 @@ $(document).ready(function () {
 
 var ingredientListArray = [];
 let counter = 0;
+let ingredientAdded = false;
+
 
 // Add ingredient to ingredients list
 $('.add-ingredient-btn').click(function (event) {
+    
     event.preventDefault();
     // Takes the value of the input box and adds it to a variable
     var inputText = $('.ingredient-input').val();
     console.log(inputText);
-    // stores that value in an array
-    ingredientListArray.push(inputText);
-    // Array is converted to string for injecting into API call
-    var ingredientsList = ingredientListArray.join(",");
-    // Clears input field
-    $('.ingredient-input').val("");
-    // Creates div to display ingredient on webpage
-    counter++;
-    var ingredientName = document.createElement('div');
-    ingredientName.className = 'ingredientTag';
-    ingredientName.id = 'ingredientName' + counter;
-    ingredientName.textContent = inputText;
+    if (inputText === '') {
+        var errorMsg = document.createElement('div');
+        errorMsg.textContent = "Please Enter a Valid Ingredient";
+        errorMsg.style = "background-color: transparent; color: red;"
+        document.querySelector('.ingredients-display').append(errorMsg);
+        setTimeout(function() {
+        errorMsg.remove();
+        }, 2000);
+    } else {
+        // stores that value in an array
+        ingredientListArray.push(inputText);
+        // Array is converted to string for injecting into API call
+        var ingredientsList = ingredientListArray.join(",");
+        // Clears input field
+        $('.ingredient-input').val("");
+        // Creates div to display ingredient on webpage
+        counter++;
+        var ingredientName = document.createElement('div');
+        ingredientName.className = 'ingredientTag';
+        ingredientName.id = 'ingredientName' + counter;
+        ingredientName.textContent = inputText + '\xa0\xa0\xa0\xa0\xa0' + "X";
 
-    var removeBtn = document.createElement('button');
-    removeBtn.textContent = 'X';
-    removeBtn.id = 'remove-btn';
+        document.querySelector('.ingredients-display').append(ingredientName);
 
-    ingredientName.appendChild(removeBtn);
-    document.querySelector('.ingredients-display').append(ingredientName);
+        if (!ingredientAdded) {
+            var recipeSearchBtn = document.createElement('button');
+            recipeSearchBtn.textContent = 'Find a Recipe!';
+            recipeSearchBtn.id = 'recipe-search-btn';
+            document.querySelector('.results').append(recipeSearchBtn);
+            ingredientAdded = true;
+        }
+    }
+    
 });
 
 
@@ -52,14 +69,14 @@ $('.ingredients-display').click(function (event) {
     // console.log(individualDiv);
 
     individualDiv.remove();
-    
+
+    if (!document.querySelector('.ingredientTag')) {
+        document.getElementById('recipe-search-btn').remove();
+        ingredientAdded = false;
+    }
 })
 
 
-
-// $('.results-btn').click(function (ingredientsList) {
-//     getRecipes(ingredientsList);
-// })
 
 // API call function to search for recipes via ingredients and return recipe ids
 function getRecipeIds(ingredient) {
