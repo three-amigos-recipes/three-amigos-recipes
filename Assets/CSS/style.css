@@ -75,3 +75,23 @@ margin-top: 60px;
   display: block;
   margin-top: 40px;
 }
+.about-header {
+  margin-top: 50px;
+  margin-bottom: 60px;
+  text-align: center;
+}
+
+.about-t {
+  margin-top: 30px;
+  margin-bottom: 30px;
+}
+
+.about-c {
+  margin-top: 30px;
+  margin-bottom: 30px;
+}
+
+.about-j {
+  margin-top: 30px;
+  margin-bottom: 30px;
+}
