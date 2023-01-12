@@ -5,8 +5,8 @@
 }
 
 .mixing-pot {
-    text-align: center;
-    margin-top: 70px;
+  text-align: center;
+  margin-top: 70px;
 }
 
 .mixing-pot h1 {
@@ -14,53 +14,69 @@
 }
 
 form {
-    background-color: #4654e1;
-    width: 500px;
-    height: 44px;
-    border-radius: 5px;
-    display: inline-flex;
-    flex-direction: row;
-    align-items: center;
-  }
+  background-color: grey;
+  max-width: 550px;
+  width: 90%;
+  height: 44px;
+  border-radius: 10px;
+  display: inline-flex;
+  flex-direction: row;
+  align-items: center;
+  text-align: left;
+}
 
-  input {
-    all: unset;
-    font: 16px system-ui;
-    color: #fff;
-    height: 100%;
-    width: 100%;
-    padding: 6px 10px;
-  }
+input {
+  all: unset;
+  font: 16px system-ui;
+  color: #fff;
+  height: 100%;
+  width: 100%;
+  padding: 6px 10px;
+}
 
-  ::placeholder {
-    color: #fff;
-    opacity: 0.7; 
-  }
+::placeholder {
+  color: #fff;
+  opacity: 0.7; 
+}
 
-  .ingredients-display {
-    background: gray;
-    height: 45px;
-    width: 425px;
-    margin: auto;
-    margin-top: 5px;
-    display: block;
-  }
+.ingredients-display {
+  height: auto;
+  max-width: 450px;
+  width: 80%;
+  margin: auto;
+  margin-top: 5px;
+  display: flex;
+  justify-content: space-evenly;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
 
-  .results {
-    text-align: center;
-    margin-top: 30px;
-  }
+.ingredients-display div {
+  background-color: rgb(241, 60, 60);
+  color: white;
+  border-radius: 10px;
+  padding: 0 10px 0 10px;
+  margin: 10px 0 0 10px;
+}
 
-  .results ul {
-    background: gray;
-    display: inline-block;
-    height: 300px;
-    width: 515px;
-  }
+.results {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  margin-top: 30px;
+}
 
-  .about {
-    margin-top: 200px;
-  }
+.results ul {
+  background: gray;
+  display: flex;
+  height: auto;
+  width: 515px;
+}
+
+.about {
+  margin-top: 200px;
+}
 
 .past-results h1 {
 text-align: center;
@@ -75,6 +91,7 @@ margin-top: 60px;
   display: block;
   margin-top: 40px;
 }
+
 .about-header {
   margin-top: 50px;
   margin-bottom: 60px;
@@ -94,4 +111,37 @@ margin-top: 60px;
 .about-j {
   margin-top: 30px;
   margin-bottom: 30px;
+
+.navbar-brand {
+  height: 80px;
+}
+
+.navbar-item img {
+  max-height: 3.5rem;
+  height: 120px;
+  width: 60px;
+}
+
+#remove-btn {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  margin-left: 15px;
+  padding-right: 10px;
+  color: white;
+}
+
+.add-ingredient-btn {
+  width: 200px;
+  height: 44px;
+  border-radius: 10px;
+  font-weight: 500;
+}
+
+#recipe-search-btn {
+  background-color: rgb(241, 60, 60);
+  border-radius: 10px;
+  padding: 5px 50px;
+  color: white;
+  border: 1px solid grey;
 }

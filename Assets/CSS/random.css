@@ -1,4 +1,42 @@
-#random-recipe {
+#random-recipe-btn {
     display: block;
-    margin: 75px auto;
+    margin: 25px auto 20px;
+}
+
+.card {
+    margin: 25px 200px;
+    text-align: center;
+    background-color: rgb(247, 243, 225);
+}
+
+.card img {
+    height: 250px;
+    padding: 10px;
+}
+
+#title {
+    padding: 25px;
+    font-size: 30px;
+    color: bisque;
+    background-color: rgb(66, 126, 98);
+}
+
+#time {
+    margin-bottom: -30px;
+    padding-left: 15px;
+    display: flex;
+    justify-content: flex-start;
+    font-size: 20px;
+}
+
+#instructions {
+    margin-bottom: 25px;
+    font-display: flex;
+}
+
+#url {
+    padding: 0 10px 15px 0;
+    display: flex;
+    justify-content: flex-end;
+    font-size: 1.25em;
 }
