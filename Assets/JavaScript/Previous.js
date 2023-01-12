@@ -15,12 +15,12 @@ let existingRecipes = storedRecipes ? JSON.parse(storedRecipes) : [];
 
 existingRecipes.forEach(function (recipe) {
     // display the recipe information, for example by creating and appending elements to the DOM.
-    let recipeTitle = document.createElement('h2');
+    let recipeTitle = document.createElement('div');
     recipeTitle.innerText = recipe.title;
     recipeTitle.id = 'title'
     let recipeImg = document.createElement('img')
     recipeImg.setAttribute('src', recipe.image)
-    recipeImg.id = 'i'
+    recipeImg.id = 'picture'
     let recipeUrl = document.createElement('a');
     recipeUrl.setAttribute('href', recipe.sourceUrl);
     recipeUrl.innerText = recipe.sourceUrl;
@@ -28,7 +28,7 @@ existingRecipes.forEach(function (recipe) {
 
 
 
-    document.body.append(recipeTitle, recipeImg, recipeUrl);
+    document.querySelector('.card').append(recipeTitle, recipeImg, recipeUrl);
 });
 
 

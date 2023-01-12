@@ -78,20 +78,6 @@ input {
   margin-top: 200px;
 }
 
-.past-results h1 {
-text-align: center;
-margin-top: 60px;
-}
-
-.past-results p {
-  background: gray;
-  margin: auto;
-  height: 525px;
-  width: 1100px;
-  display: block;
-  margin-top: 40px;
-}
-
 .about-header {
   margin-top: 50px;
   margin-bottom: 60px;
