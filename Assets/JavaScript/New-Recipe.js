@@ -37,8 +37,6 @@ function getRandom(id) {
 
         .then(function (response) {
 
-            // Asks you to try again if the page is invalid
-
             if (response.status) {
                 getRandom(Math.floor((Math.random()) * 750000));
             } else {
@@ -47,16 +45,26 @@ function getRandom(id) {
                 title.textContent = response.title
                 title.id = 'title'
 
-                var img = document.createElement('img')
-                img.setAttribute('src', response.image)
+                if (response.imageType === 'jpeg', 'jpg', 'png') {
+                    var img = document.createElement('img')
+                    img.setAttribute('src', response.image)
+                } else {
+
+                }
 
                 var time = document.createElement('div')
                 time.textContent = 'Cook time: ' + response.readyInMinutes + ' minutes!'
                 time.id = 'time'
 
-                var instructions = document.createElement('div')
-                instructions.textContent = 'Instructions: ' + response.instructions
-                instructions.id = 'instructions'
+                if (!response.instructions) {
+                    var instructions = document.createElement('div')
+                    instructions.textContent = 'Click link for instructions'
+                    instructions.id = 'instructions'
+                } else {
+                    var instructions = document.createElement('div')
+                    instructions.textContent = 'Instructions: ' + response.instructions
+                    instructions.id = 'instructions'
+                }
 
                 var url = document.createElement('a')
                 url.setAttribute('href', response.sourceUrl)
@@ -69,3 +77,6 @@ function getRandom(id) {
         .catch(err => console.error(err));
     return;
 };
+
+
+// Add a clicked URL to local storage
