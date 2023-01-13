@@ -16,7 +16,7 @@ var ingredientsList = '';
 var ingredientListArray = [];
 let counter = 0;
 let ingredientAdded = false;
-
+let resultsDisplayed = false;
 
 // Add ingredient to ingredients list
 $('.add-ingredient-btn').click(function (event) {
@@ -52,7 +52,8 @@ $('.add-ingredient-btn').click(function (event) {
             var recipeSearchBtn = document.createElement('button');
             recipeSearchBtn.textContent = 'Find a Recipe!';
             recipeSearchBtn.id = 'recipe-search-btn';
-            document.querySelector('.results').append(recipeSearchBtn);
+            recipeSearchBtn.className = 'results-btn';
+            document.querySelector('.results-btns').append(recipeSearchBtn);
 
             $('#recipe-search-btn').click(function(event) {
                 event.preventDefault();
@@ -60,11 +61,30 @@ $('.add-ingredient-btn').click(function (event) {
                 var ingredientsList = ingredientListArray.join(",");
 
                 getRecipeIds(ingredientsList);
-            })
+                resultsDisplayed = true;
+
+                if (resultsDisplayed) {
+                    var clearRecipesBtn = document.createElement('button');
+                    clearRecipesBtn.textContent = 'Clear Results';
+                    clearRecipesBtn.id = 'clear-results-btn';
+                    clearRecipesBtn.className = 'results-btn';
+                    document.querySelector('.results-btns').append(clearRecipesBtn);
+
+                    $('#clear-results-btn').click(function(event) {
+                        event.preventDefault();
+
+                        document.querySelector('.results-display').innerHTML = '';
+                        document.querySelector('.ingredients-display').innerHTML = '';
+                        // document.getElementById('recipe-search-btn').remove();
+                        // document.getElementById('clear-results-btn').remove();
+                    })
+                }
+            });
 
             ingredientAdded = true;
         }
 
+        
         return ingredientsList;
     }
     
@@ -145,23 +165,24 @@ fetch('https://spoonacular-recipe-food-nutrition-v1.p.rapidapi.com/recipes/' + i
 	.then(function(response) {
 
         // Creates elements for the response title, image, readyInMinutes and sourceUrl if the recipe page has a valid id
-        var title = document.createElement('div')
-        title.textContent = response.title
-        title.id = 'title'
+        var title = document.createElement('div');
+        title.textContent = response.title;
+        title.id = 'title';
 
-        var img = document.createElement('img')
-        img.setAttribute('src', response.image)
+        var img = document.createElement('img');
+        img.setAttribute('src', response.image);
+        img.id = 'image';
 
-        var time = document.createElement('div')
-        time.textContent = 'Cook time: ' + response.readyInMinutes + ' minutes!'
-        time.id = 'time'
+        var time = document.createElement('div');
+        time.textContent = 'Cook time: ' + response.readyInMinutes + ' minutes!';
+        time.id = 'time';
 
-        var url = document.createElement('a')
-        url.setAttribute('href', response.sourceUrl)
-        url.textContent = response.title
-        url.id = 'url'
+        var url = document.createElement('a');
+        url.setAttribute('href', response.sourceUrl);
+        url.textContent = response.title;
+        url.id = 'url';
         // Appends the elements created 
-        document.querySelector('.results').append(title, img, time, url)
+        document.querySelector('.results-display').append(title, img, time, url);
     
     })
 	.catch(err => console.error(err));
