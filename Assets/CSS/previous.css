@@ -4,12 +4,19 @@
     padding-bottom: 20px;
 }
 
-.card {
+#recipeContainer {
     text-align: center;
 }
 
+.recipe-container {
+    background-color: aqua;
+}
+  
+
 #title {
-    font-size: 50px;
+    font-size: 30px;
+    margin-top: 30px;
+    margin-bottom: -15px;
 }
 
 #picture {
@@ -21,4 +28,23 @@
 
 #link {
     font-size: 15px;
+    padding-top: 10px;
+}
+
+.navbar {
+    background-color: rgb(241, 60, 60) !important;
+}
+
+.navbar-brand {
+    height: 80px;
+}
+  
+.navbar-item img {
+    max-height: 3.5rem;
+    height: 120px;
+    width: 60px;
+}
+
+.navbar-burger {
+    height: 5rem !important;
 }
