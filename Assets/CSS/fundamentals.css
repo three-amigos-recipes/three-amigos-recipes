@@ -1,0 +1,23 @@
+.intro {
+    text-align: center;
+    display: block;
+    width: auto;
+    margin-right: auto;
+ 
+}
+
+.intro p {
+    width: auto;
+    text-align: center;
+    margin: auto;
+
+}
+
+.links {
+    float: right;
+    text-align: center;
+    height: 600px;
+    width: 200px;
+    margin: auto;
+    background: #427e62;
+}
