@@ -194,12 +194,16 @@ fetch('https://spoonacular-recipe-food-nutrition-v1.p.rapidapi.com/recipes/' + i
         time.textContent = 'Cook time: ' + response.readyInMinutes + ' minutes!';
         time.id = 'time';
 
+        var urlDiv = document.createElement('div');
+        urlDiv.id = 'url-div';
+
         var url = document.createElement('a');
         url.setAttribute('href', response.sourceUrl);
         url.textContent = response.title;
         url.id = 'url';
         // Appends the elements created 
-        document.querySelector('.results-display').append(title, img, time, url);
+        document.querySelector('.results-display').append(title, img, time, urlDiv);
+        urlDiv.append(url);
     
     })
 	.catch(err => console.error(err));
