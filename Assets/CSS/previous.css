@@ -10,7 +10,7 @@
 
 .recipe-container {
     background-color: aqua;
-  }
+}
   
 
 #title {
@@ -24,9 +24,27 @@
     justify-content: center;
     margin: auto;
     height: 150px;
-} */
+}
 
 #link {
     font-size: 15px;
     padding-top: 10px;
+}
+
+.navbar {
+    background-color: rgb(241, 60, 60) !important;
+}
+
+.navbar-brand {
+    height: 80px;
+}
+  
+.navbar-item img {
+    max-height: 3.5rem;
+    height: 120px;
+    width: 60px;
+}
+
+.navbar-burger {
+    height: 5rem !important;
 }
