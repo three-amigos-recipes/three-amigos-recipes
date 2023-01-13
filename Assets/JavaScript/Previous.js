@@ -1,3 +1,5 @@
+var recipeContainerEl = document.querySelector('#recipeContainer')
+
 $(document).ready(function () {
 
     // Check for click events on the navbar burger icon
@@ -15,25 +17,26 @@ let existingRecipes = storedRecipes ? JSON.parse(storedRecipes) : [];
 
 existingRecipes.forEach(function (recipe) {
     // display the recipe information, for example by creating and appending elements to the DOM.
-    let recipeTitle = document.createElement('div');
+    let recipeEl = document.createElement('a');
+    recipeEl.setAttribute('href', recipe.sourceUrl);
+    
+    let recipeBox = document.createElement('div');
+    recipeBox.classList = 'recipe-container';
+
+    let recipeTitle = document.createElement('h2');
     recipeTitle.innerText = recipe.title;
-    recipeTitle.id = 'title'
-    let recipeImg = document.createElement('img')
-    recipeImg.setAttribute('src', recipe.image)
-    recipeImg.id = 'picture'
-    let recipeUrl = document.createElement('a');
-    recipeUrl.setAttribute('href', recipe.sourceUrl);
-    recipeUrl.innerText = recipe.sourceUrl;
-    recipeUrl.id = 'link'
+    recipeTitle.id = 'title';
+    recipeTitle.classList = 'card-header-title is-centered';
 
+    let recipeImg = document.createElement('img');
+    recipeImg.setAttribute('src', recipe.image);
+    recipeImg.id = 'picture';
+    
+    recipeBox.append(recipeTitle, recipeImg);
+    recipeEl.appendChild(recipeBox);
 
-
-    document.querySelector('.card').append(recipeTitle, recipeImg, recipeUrl);
+    recipeContainerEl.appendChild(recipeEl);
 });
-
-
-
-// Stack the list in a column
 
 
 // See about displaying a certain amount and adding a display more option?

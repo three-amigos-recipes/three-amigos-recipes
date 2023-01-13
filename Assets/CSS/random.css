@@ -38,5 +38,23 @@
     padding: 0 10px 15px 0;
     display: flex;
     justify-content: flex-end;
-    font-size: 1.25em;
+    font-size: 20px;
+}
+
+.navbar {
+    background-color: rgb(241, 60, 60) !important;
+}
+
+.navbar-brand {
+    height: 80px;
+}
+  
+.navbar-item img {
+    max-height: 3.5rem;
+    height: 120px;
+    width: 60px;
+}
+
+.navbar-burger {
+    height: 5rem !important;
 }

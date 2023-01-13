@@ -20,7 +20,7 @@ let resultsDisplayed = false;
 
 // Add ingredient to ingredients list
 $('.add-ingredient-btn').click(function (event) {
-    
+
     event.preventDefault();
     // Takes the value of the input box and adds it to a variable
     var inputText = $('.ingredient-input').val();
@@ -30,13 +30,13 @@ $('.add-ingredient-btn').click(function (event) {
         errorMsg.textContent = "Please Enter a Valid Ingredient";
         errorMsg.style = "background-color: transparent; color: red;"
         document.querySelector('.ingredients-display').append(errorMsg);
-        setTimeout(function() {
-        errorMsg.remove();
+        setTimeout(function () {
+            errorMsg.remove();
         }, 2000);
     } else {
         // stores that value in an array
         ingredientListArray.push(inputText);
-        
+
         // Clears input field
         $('.ingredient-input').val("");
         // Creates div to display ingredient on webpage
@@ -55,7 +55,7 @@ $('.add-ingredient-btn').click(function (event) {
             recipeSearchBtn.className = 'results-btn';
             document.querySelector('.results-btns').append(recipeSearchBtn);
 
-            $('#recipe-search-btn').click(function(event) {
+            $('#recipe-search-btn').click(function (event) {
                 event.preventDefault();
                 // Array is converted to string for injecting into API call
                 var ingredientsList = ingredientListArray.join(",");
@@ -70,13 +70,19 @@ $('.add-ingredient-btn').click(function (event) {
                     clearRecipesBtn.className = 'results-btn';
                     document.querySelector('.results-btns').append(clearRecipesBtn);
 
-                    $('#clear-results-btn').click(function(event) {
+                    $('#clear-results-btn').click(function (event) {
                         event.preventDefault();
 
                         document.querySelector('.results-display').innerHTML = '';
                         document.querySelector('.ingredients-display').innerHTML = '';
-                        // document.getElementById('recipe-search-btn').remove();
-                        // document.getElementById('clear-results-btn').remove();
+                        if (document.getElementById('recipe-search-btn')) {
+                            document.getElementById('recipe-search-btn').remove();
+                        }
+                        if (document.getElementById('clear-results-btn')) {
+                            document.getElementById('clear-results-btn').remove();
+                        }
+                        ingredientAdded = false;
+                        ingredientListArray = [];
                     })
                 }
             });
@@ -84,10 +90,10 @@ $('.add-ingredient-btn').click(function (event) {
             ingredientAdded = true;
         }
 
-        
+
         return ingredientsList;
     }
-    
+
 });
 
 
@@ -97,7 +103,7 @@ $('.ingredients-display').click(function (event) {
     event.preventDefault();
     // Identifies the unique div that has been clicked on
     var individualDiv = event.target;
-    
+
     // The following two lines get the text content of the div that was clicked on.
     // Then filters out the "    X" at the end of the string.
     targetText = event.target.textContent;
@@ -111,12 +117,23 @@ $('.ingredients-display').click(function (event) {
 
     console.log(editedTargetText);
     console.log(ingredientListArray);
-    
+
     individualDiv.remove();
 
     if (!document.querySelector('.ingredientTag')) {
         document.getElementById('recipe-search-btn').remove();
         ingredientAdded = false;
+
+        document.querySelector('.results-display').innerHTML = '';
+        document.querySelector('.ingredients-display').innerHTML = '';
+        if (document.getElementById('recipe-search-btn')) {
+            document.getElementById('recipe-search-btn').remove();
+        }
+        if (document.getElementById('clear-results-btn')) {
+            document.getElementById('clear-results-btn').remove();
+        }
+        ingredientAdded = false;
+        ingredientListArray = [];
     }
 })
 
@@ -153,37 +170,54 @@ function getRecipeIds(ingredient) {
 // Function to get recipe information using the recipe ID(s)
 function getRecipeInfo(ids) {
     const options = {
-	method: 'GET',
-	headers: {
-		'X-RapidAPI-Key': '46bd054f8cmsh16bbe6b909a599dp11e469jsnb89084f34eb0',
-		'X-RapidAPI-Host': 'spoonacular-recipe-food-nutrition-v1.p.rapidapi.com'
-	}
-};
+        method: 'GET',
+        headers: {
+            'X-RapidAPI-Key': '46bd054f8cmsh16bbe6b909a599dp11e469jsnb89084f34eb0',
+            'X-RapidAPI-Host': 'spoonacular-recipe-food-nutrition-v1.p.rapidapi.com'
+        }
+    };
 
-fetch('https://spoonacular-recipe-food-nutrition-v1.p.rapidapi.com/recipes/' + ids + '/information', options)
-	.then(response => response.json())
-	.then(function(response) {
+    fetch('https://spoonacular-recipe-food-nutrition-v1.p.rapidapi.com/recipes/' + ids + '/information', options)
+        .then(response => response.json())
+        .then(function (response) {
 
-        // Creates elements for the response title, image, readyInMinutes and sourceUrl if the recipe page has a valid id
-        var title = document.createElement('div');
-        title.textContent = response.title;
-        title.id = 'title';
+            // Creates elements for the response title, image, readyInMinutes and sourceUrl if the recipe page has a valid id
+            var title = document.createElement('div');
+            title.textContent = response.title;
+            title.id = 'title';
 
-        var img = document.createElement('img');
-        img.setAttribute('src', response.image);
-        img.id = 'image';
+            var img = document.createElement('img');
+            img.setAttribute('src', response.image);
+            img.id = 'image';
 
-        var time = document.createElement('div');
-        time.textContent = 'Cook time: ' + response.readyInMinutes + ' minutes!';
-        time.id = 'time';
+            var time = document.createElement('div');
+            time.textContent = 'Cook time: ' + response.readyInMinutes + ' minutes!';
+            time.id = 'time';
 
-        var url = document.createElement('a');
-        url.setAttribute('href', response.sourceUrl);
-        url.textContent = response.title;
-        url.id = 'url';
-        // Appends the elements created 
-        document.querySelector('.results-display').append(title, img, time, url);
-    
-    })
-	.catch(err => console.error(err));
+            var urlDiv = document.createElement('div');
+            urlDiv.id = 'url-div';
+
+            var url = document.createElement('a');
+            url.setAttribute('href', response.sourceUrl);
+            url.textContent = response.title;
+            url.id = 'url';
+            // Appends the elements created 
+            document.querySelector('.results-display').append(title, img, time, urlDiv);
+            urlDiv.append(url);
+
+            // Adds the recipe to the local storage
+            url.addEventListener('click', function () {
+                let href = this.getAttribute('href');
+                if (href === response.sourceUrl) {
+                    let existingRecipes = JSON.parse(localStorage.getItem('recipes'));
+                    if (!existingRecipes) {
+                        existingRecipes = [];
+                    }
+                    existingRecipes.push({ 'title': response.title, 'image': response.image, 'instructions': response.instructions, 'sourceUrl': response.sourceUrl });
+            localStorage.setItem('recipes', JSON.stringify(existingRecipes));
+                }
+            });
+
+        })
+        .catch(err => console.error(err));
 }

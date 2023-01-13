@@ -4,21 +4,53 @@
     padding-bottom: 20px;
 }
 
-.card {
+#recipeContainer {
     text-align: center;
+    width: 100%;
+    max-width: 1440px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.recipe-container {
+    background-color: rgb(247, 243, 225);
+    margin: 25px 0;
+    width: 500px;
+    border-radius: 10px;
+    box-shadow: 3px 5px 15px rgb(165, 165, 164);
+}  
+.recipe-container:hover {
+    background-color: rgb(226, 222, 204);
 }
 
 #title {
-    font-size: 50px;
+    font-size: 30px;
+    color: bisque;
+    background-color: rgb(66, 126, 98);
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
 }
 
 #picture {
-    display: flex;
-    justify-content: center;
-    margin: auto;
+    margin: 25px auto;
     height: 150px;
+} 
+
+.navbar {
+    background-color: rgb(241, 60, 60) !important;
 }
 
-#link {
-    font-size: 15px;
+.navbar-brand {
+    height: 80px;
+}
+  
+.navbar-item img {
+    max-height: 3.5rem;
+    height: 120px;
+    width: 60px;
+}
+
+.navbar-burger {
+    height: 5rem !important;
 }

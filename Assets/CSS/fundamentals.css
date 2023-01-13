@@ -1,3 +1,4 @@
+
 .intro {
     text-align: center;
     display: block;
@@ -20,4 +21,15 @@
     width: 200px;
     margin: auto;
     background: #427e62;
+}
+
+.intro {
+    text-align: center;
+    width: 300px;
+    height: 500px;
+}
+  
+.links {
+  float: right;
+  display: inline;
 }
