@@ -17,7 +17,6 @@ let existingRecipes = storedRecipes ? JSON.parse(storedRecipes) : [];
 
 existingRecipes.forEach(function (recipe) {
     
-
     // display the recipe information, for example by creating and appending elements to the DOM.
     let recipeEl = document.createElement('a');
     recipeEl.setAttribute('href', recipe.sourceUrl);

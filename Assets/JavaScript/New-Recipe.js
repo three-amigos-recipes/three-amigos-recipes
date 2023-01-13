@@ -72,7 +72,7 @@ function getRandom(id) {
                 // Appends the elements created 
                 document.querySelector('.card').append(title, img, instructions, time, url);
 
-                
+
                 // Adds the recipe to the local storage
                 url.addEventListener('click', function () {
                     localStorage.setItem('clickedLink', this.getAttribute('href'));
@@ -83,8 +83,6 @@ function getRandom(id) {
                 }
                 existingRecipes.push({ 'title': response.title, 'image': response.image, 'instructions': response.instructions, 'sourceUrl': response.sourceUrl });
                 localStorage.setItem('recipes', JSON.stringify(existingRecipes));
-
-
             };
         })
         .catch(err => console.error(err));
