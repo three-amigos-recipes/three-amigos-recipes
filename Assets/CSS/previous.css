@@ -16,15 +16,20 @@
 .recipe-container {
     background-color: rgb(247, 243, 225);
     margin: 25px 0;
-    border: 3px solid rgb(18, 37, 25);
+    width: 500px;
     border-radius: 10px;
+    box-shadow: 3px 5px 15px rgb(165, 165, 164);
 }  
+.recipe-container:hover {
+    background-color: rgb(226, 222, 204);
+}
 
 #title {
     font-size: 30px;
     color: bisque;
     background-color: rgb(66, 126, 98);
-    border-radius: 10px;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
 }
 
 #picture {
