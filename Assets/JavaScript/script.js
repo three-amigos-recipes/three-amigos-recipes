@@ -74,6 +74,9 @@ $('.add-ingredient-btn').click(function (event) {
                         event.preventDefault();
 
                         document.querySelector('.results-display').innerHTML = '';
+                        document.querySelector('.ingredients-display').innerHTML = '';
+                        document.getElementById('recipe-search-btn').remove();
+                        document.getElementById('clear-results-btn').remove();
                     })
                 }
             });

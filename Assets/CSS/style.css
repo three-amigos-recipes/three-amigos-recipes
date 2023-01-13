@@ -150,3 +150,12 @@ input {
 .results a {
   margin-bottom: 50px;
 }
+
+#clear-results-btn {
+  background-color:rgb(241, 60, 60);
+  border-radius: 10px;
+  padding: 5px 50px;
+  border: 1px solid grey;
+  color: white;
+  margin-left: 20px;
+}
