@@ -200,8 +200,6 @@ function getRecipeInfo(ids) {
             url.id = 'url';
             // Appends the elements created 
             document.querySelector('.results-display').append(title, img, time, url);
-
-            // Adds the recipe to the local storage
             url.addEventListener('click', function () {
                 localStorage.setItem('clickedLink', this.getAttribute('href'));
             });
@@ -211,6 +209,7 @@ function getRecipeInfo(ids) {
             }
             existingRecipes.push({ 'title': response.title, 'image': response.image, 'instructions': response.instructions, 'sourceUrl': response.sourceUrl });
             localStorage.setItem('recipes', JSON.stringify(existingRecipes));
+
         })
         .catch(err => console.error(err));
 }
