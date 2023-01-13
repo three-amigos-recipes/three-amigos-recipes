@@ -4,12 +4,19 @@
     padding-bottom: 20px;
 }
 
-.card {
+#recipeContainer {
     text-align: center;
 }
 
+.recipe-container {
+    background-color: aqua;
+}
+  
+
 #title {
-    font-size: 50px;
+    font-size: 30px;
+    margin-top: 30px;
+    margin-bottom: -15px;
 }
 
 #picture {
@@ -21,6 +28,7 @@
 
 #link {
     font-size: 15px;
+    padding-top: 10px;
 }
 
 .navbar {
