@@ -16,7 +16,6 @@ let storedRecipes = localStorage.getItem('recipes');
 let existingRecipes = storedRecipes ? JSON.parse(storedRecipes) : [];
 
 existingRecipes.forEach(function (recipe) {
-    
 
     // display the recipe information, for example by creating and appending elements to the DOM.
     let recipeEl = document.createElement('a');
@@ -33,7 +32,7 @@ existingRecipes.forEach(function (recipe) {
     let recipeImg = document.createElement('img');
     recipeImg.setAttribute('src', recipe.image);
     recipeImg.id = 'picture';
-
+    
     recipeBox.append(recipeTitle, recipeImg);
     recipeEl.appendChild(recipeBox);
 
