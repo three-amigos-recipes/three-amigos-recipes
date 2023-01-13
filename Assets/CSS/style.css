@@ -8,6 +8,20 @@
   background-color: rgb(241, 60, 60) !important;
 }
 
+.navbar-burger {
+  height: 5rem !important;
+}
+
+.navbar-brand {
+  height: 80px;
+}
+
+.navbar-item img {
+  max-height: 3.5rem;
+  height: 120px;
+  width: 60px;
+}
+
 .mixing-pot {
   text-align: center;
   margin-top: 70px;
@@ -63,70 +77,17 @@ input {
   margin: 10px 0 0 10px;
 }
 
-.results {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  text-align: center;
-  margin-top: 30px;
-}
-
-.results ul {
-  background: gray;
-  display: flex;
-  height: auto;
-  width: 515px;
-}
-
-.about {
-  margin-top: 200px;
-}
-
-.about-header {
-  margin-top: 50px;
-  margin-bottom: 60px;
-  text-align: center;
-}
-
-.about-t {
-  margin-top: 30px;
-  margin-bottom: 30px;
-}
-
-.about-c {
-  margin-top: 30px;
-  margin-bottom: 30px;
-}
-
-.about-j {
-  margin-top: 30px;
-  margin-bottom: 30px;
-}
-
-.navbar-brand {
-  height: 80px;
-}
-
-.navbar-item img {
-  max-height: 3.5rem;
-  height: 120px;
-  width: 60px;
-}
-
-#remove-btn {
-  background-color: transparent;
-  border: none;
-  cursor: pointer;
-  margin-left: 15px;
-  padding-right: 10px;
-  color: white;
-}
-
 .add-ingredient-btn {
   width: 200px;
   height: 44px;
   border-radius: 10px;
   font-weight: 500;
+}
+
+.results-btns {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 #recipe-search-btn {
@@ -138,12 +99,44 @@ input {
   margin-top: 30px;
 }
 
-.results #title {
-  margin: 50px 0;
-  background-color: rgb(241, 60, 60);
+#clear-results-btn {
+  background-color:rgb(241, 60, 60);
+  border-radius: 10px;
+  padding: 5px 50px;
+  border: 1px solid grey;
   color: white;
-  padding: 10px 15%;
-  font-size: 40px;
+  margin: 30px 0 0 10px;
+}
+
+.results {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  margin-top: 30px;
+  text-align: center;
+  background-color: rgb(247, 243, 225);
+}
+
+.results-display {
+  display: flex;
+  flex-direction: column;
+}
+
+.results #title {
+  padding: 25px;
+  font-size: 30px;
+  color: bisque;
+  background-color: rgb(66, 126, 98);
+  
+}
+
+.results #time {
+  margin-bottom: -30px;
+  padding-left: 15px;
+  display: flex;
+  justify-content: flex-start;
+  font-size: 20px;
 }
 
 .results img {
@@ -151,30 +144,13 @@ input {
   margin-bottom: 20px;
 }
 
-.results a {
+.results #url {
+  display: flex;
+  justify-content: flex-end;
+  font-size: 1.25em;
   margin-bottom: 50px;
 }
 
-.intro {
-  text-align: center;
-  width: 300px;
-  height: 500px;
-}
 
-.links {
-  float: right;
-  display: inline;
-}
 
-#clear-results-btn {
-  background-color:rgb(241, 60, 60);
-  border-radius: 10px;
-  padding: 5px 50px;
-  border: 1px solid grey;
-  color: white;
-  margin-left: 20px;
-}
 
-.navbar-burger {
-  height: 5rem !important;
-}
