@@ -150,14 +150,3 @@ input {
 .results a {
   margin-bottom: 50px;
 }
-
-.intro {
-  text-align: center;
-  width: 300px;
-  height: 500px;
-}
-
-.links {
-  float: right;
-  display: inline;
-}
