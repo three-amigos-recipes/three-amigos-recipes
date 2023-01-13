@@ -75,8 +75,14 @@ $('.add-ingredient-btn').click(function (event) {
 
                         document.querySelector('.results-display').innerHTML = '';
                         document.querySelector('.ingredients-display').innerHTML = '';
-                        // document.getElementById('recipe-search-btn').remove();
-                        // document.getElementById('clear-results-btn').remove();
+                        if (document.getElementById('recipe-search-btn')) {
+                            document.getElementById('recipe-search-btn').remove();
+                        }
+                        if (document.getElementById('clear-results-btn')) {
+                            document.getElementById('clear-results-btn').remove();
+                        }
+                        ingredientAdded = false;
+                        ingredientListArray = [];
                     })
                 }
             });
@@ -117,6 +123,17 @@ $('.ingredients-display').click(function (event) {
     if (!document.querySelector('.ingredientTag')) {
         document.getElementById('recipe-search-btn').remove();
         ingredientAdded = false;
+
+        document.querySelector('.results-display').innerHTML = '';
+        document.querySelector('.ingredients-display').innerHTML = '';
+        if (document.getElementById('recipe-search-btn')) {
+            document.getElementById('recipe-search-btn').remove();
+        }
+        if (document.getElementById('clear-results-btn')) {
+            document.getElementById('clear-results-btn').remove();
+        }
+        ingredientAdded = false;
+        ingredientListArray = [];
     }
 })
 
