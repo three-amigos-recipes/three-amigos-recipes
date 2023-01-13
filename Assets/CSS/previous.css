@@ -6,30 +6,31 @@
 
 #recipeContainer {
     text-align: center;
+    width: 100%;
+    max-width: 1440px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .recipe-container {
-    background-color: aqua;
-}
-  
+    background-color: rgb(247, 243, 225);
+    margin: 25px 0;
+    border: 3px solid rgb(18, 37, 25);
+    border-radius: 10px;
+}  
 
 #title {
     font-size: 30px;
-    margin-top: 30px;
-    margin-bottom: -15px;
+    color: bisque;
+    background-color: rgb(66, 126, 98);
+    border-radius: 10px;
 }
 
 #picture {
-    display: flex;
-    justify-content: center;
-    margin: auto;
+    margin: 25px auto;
     height: 150px;
-}
-
-#link {
-    font-size: 15px;
-    padding-top: 10px;
-}
+} 
 
 .navbar {
     background-color: rgb(241, 60, 60) !important;

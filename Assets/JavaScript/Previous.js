@@ -16,13 +16,13 @@ let storedRecipes = localStorage.getItem('recipes');
 let existingRecipes = storedRecipes ? JSON.parse(storedRecipes) : [];
 
 existingRecipes.forEach(function (recipe) {
-    let recipeBox = document.createElement('div');
-    recipeBox.classList = 'recipe-container';
 
     // display the recipe information, for example by creating and appending elements to the DOM.
     let recipeEl = document.createElement('a');
     recipeEl.setAttribute('href', recipe.sourceUrl);
-    recipeEl.classList = 'is-child'
+    
+    let recipeBox = document.createElement('div');
+    recipeBox.classList = 'recipe-container';
 
     let recipeTitle = document.createElement('h2');
     recipeTitle.innerText = recipe.title;
@@ -32,16 +32,12 @@ existingRecipes.forEach(function (recipe) {
     let recipeImg = document.createElement('img');
     recipeImg.setAttribute('src', recipe.image);
     recipeImg.id = 'picture';
+    
+    recipeBox.append(recipeTitle, recipeImg);
+    recipeEl.appendChild(recipeBox);
 
-    recipeEl.append(recipeTitle, recipeImg);
-    recipeBox.appendChild(recipeEl);
-
-    recipeContainerEl.appendChild(recipeBox);
+    recipeContainerEl.appendChild(recipeEl);
 });
-
-
-
-// Stack the list in a column
 
 
 // See about displaying a certain amount and adding a display more option?
