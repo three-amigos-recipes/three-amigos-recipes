@@ -194,21 +194,29 @@ function getRecipeInfo(ids) {
             time.textContent = 'Cook time: ' + response.readyInMinutes + ' minutes!';
             time.id = 'time';
 
+            var urlDiv = document.createElement('div');
+            urlDiv.id = 'url-div';
+
             var url = document.createElement('a');
             url.setAttribute('href', response.sourceUrl);
             url.textContent = response.title;
             url.id = 'url';
             // Appends the elements created 
-            document.querySelector('.results-display').append(title, img, time, url);
+            document.querySelector('.results-display').append(title, img, time, urlDiv);
+            urlDiv.append(url);
+
+            // Adds the recipe to the local storage
             url.addEventListener('click', function () {
-                localStorage.setItem('clickedLink', this.getAttribute('href'));
-            });
-            let existingRecipes = JSON.parse(localStorage.getItem('recipes'));
-            if (!existingRecipes) {
-                existingRecipes = [];
-            }
-            existingRecipes.push({ 'title': response.title, 'image': response.image, 'instructions': response.instructions, 'sourceUrl': response.sourceUrl });
+                let href = this.getAttribute('href');
+                if (href === response.sourceUrl) {
+                    let existingRecipes = JSON.parse(localStorage.getItem('recipes'));
+                    if (!existingRecipes) {
+                        existingRecipes = [];
+                    }
+                    existingRecipes.push({ 'title': response.title, 'image': response.image, 'instructions': response.instructions, 'sourceUrl': response.sourceUrl });
             localStorage.setItem('recipes', JSON.stringify(existingRecipes));
+                }
+            });
 
         })
         .catch(err => console.error(err));
