@@ -1,11 +1,28 @@
 
 .intro {
     text-align: center;
-    width: 300px;
-    height: 500px;
-  }
-  
-  .links {
+    display: block;
+    width: auto;
+    margin-right: auto;
+ 
+}
+
+.intro p {
+    width: auto;
+    text-align: center;
+    margin: auto;
+
+}
+
+.links {
     float: right;
-    display: inline;
-  }
+    text-align: center;
+    height: 600px;
+    width: 200px;
+    margin: auto;
+    background: #427e62;
+}
+
+.navbar {
+    background-color: rgb(241, 60, 60) !important;
+}
