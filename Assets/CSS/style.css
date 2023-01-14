@@ -32,10 +32,11 @@
 }
 
 form {
-  background-color: grey;
+  background-color: rgb(231, 228, 228);
   max-width: 550px;
   width: 90%;
   height: 44px;
+  border: 2px solid black;
   border-radius: 10px;
   display: inline-flex;
   flex-direction: row;
@@ -46,14 +47,14 @@ form {
 input {
   all: unset;
   font: 16px system-ui;
-  color: #fff;
+  color: black;
   height: 100%;
   width: 100%;
   padding: 6px 10px;
 }
 
 ::placeholder {
-  color: #fff;
+  color: black;
   opacity: 0.7; 
 }
 
