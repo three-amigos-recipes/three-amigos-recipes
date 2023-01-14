@@ -30,3 +30,9 @@
 .navbar-brand {
   height: 80px;
 }
+
+.navbar-item img {
+  max-height: 3.5rem;
+  height: 120px;
+  width: 60px;
+}
