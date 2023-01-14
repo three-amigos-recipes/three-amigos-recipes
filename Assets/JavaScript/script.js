@@ -68,8 +68,11 @@ $('.add-ingredient-btn').click(function (event) {
                     clearRecipesBtn.textContent = 'Clear Results';
                     clearRecipesBtn.id = 'clear-results-btn';
                     clearRecipesBtn.className = 'results-btn';
-                    document.querySelector('.results-btns').append(clearRecipesBtn);
 
+                    if (!document.getElementById('clear-results-btn')) {
+                        document.querySelector('.results-btns').append(clearRecipesBtn);
+                    }
+                    
                     $('#clear-results-btn').click(function (event) {
                         event.preventDefault();
 
