@@ -114,7 +114,6 @@ input {
   align-items: center;
   text-align: center;
   margin-top: 30px;
-  text-align: center;
   background-color: rgb(247, 243, 225);
 }
 
@@ -132,7 +131,6 @@ input {
 }
 
 .results #time {
-  margin-bottom: -30px;
   padding-left: 15px;
   display: flex;
   justify-content: flex-start;
