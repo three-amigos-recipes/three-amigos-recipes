@@ -36,3 +36,7 @@
   height: 120px;
   width: 60px;
 }
+
+.navbar-burger {
+  height: 5rem !important;
+}
