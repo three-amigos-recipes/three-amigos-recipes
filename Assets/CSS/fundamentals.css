@@ -40,3 +40,26 @@
 .navbar-burger {
     height: 5rem !important;
 }
+
+.menu {
+    height: 100%;
+    width: 400px;
+    float: right;
+    display: block;
+    border-left: solid;
+    border-color: #427e62;
+}
+
+.menu-label {
+    text-align: right;
+    background: #427e62;
+    color: white;
+}
+
+.menu-list {
+    text-align: right;
+}
+
+.menu-list a.is-active {
+    background-color: #427e62;
+}
