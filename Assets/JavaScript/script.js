@@ -25,6 +25,7 @@ $('.add-ingredient-btn').click(function (event) {
     // Takes the value of the input box and adds it to a variable
     var inputText = $('.ingredient-input').val();
     console.log(inputText);
+    // If the input box is blank it will write an error message to the screen informing the user that they need to fill out the search box
     if (inputText === '') {
         var errorMsg = document.createElement('div');
         errorMsg.textContent = "Please Enter a Valid Ingredient";
@@ -48,6 +49,7 @@ $('.add-ingredient-btn').click(function (event) {
 
         document.querySelector('.ingredients-display').append(ingredientName);
 
+        // If an ingredient has been added to the page, generate a find a recipe button
         if (!ingredientAdded) {
             var recipeSearchBtn = document.createElement('button');
             recipeSearchBtn.textContent = 'Find a Recipe!';
@@ -55,6 +57,7 @@ $('.add-ingredient-btn').click(function (event) {
             recipeSearchBtn.className = 'results-btn';
             document.querySelector('.results-btns').append(recipeSearchBtn);
 
+            // If the find a recipe button is clicked, show the results
             $('#recipe-search-btn').click(function (event) {
                 event.preventDefault();
                 // Array is converted to string for injecting into API call
@@ -64,6 +67,8 @@ $('.add-ingredient-btn').click(function (event) {
                 getRecipeIds(ingredientsList);
                 resultsDisplayed = true;
 
+                // If statement to see if there are results currently displayed on the page
+                // If true, create the clear results button
                 if (resultsDisplayed) {
                     var clearRecipesBtn = document.createElement('button');
                     clearRecipesBtn.textContent = 'Clear Results';
@@ -74,6 +79,7 @@ $('.add-ingredient-btn').click(function (event) {
                         document.querySelector('.results-btns').append(clearRecipesBtn);
                     }
                     
+                    // If the clear results button is clicked, clear the page of the results
                     $('#clear-results-btn').click(function (event) {
                         event.preventDefault();
 
@@ -119,9 +125,11 @@ $('.ingredients-display').click(function (event) {
         ingredientListArray.splice(valueIndex, 1);
     }
 
-    console.log(editedTargetText);
-    console.log(ingredientListArray);
+    // Console logs for testing purposes
+    // console.log(editedTargetText);
+    // console.log(ingredientListArray);
 
+    // Code that removes the individually clicked on Div
     individualDiv.remove();
 
     if (!document.querySelector('.ingredientTag')) {
@@ -161,9 +169,11 @@ function getRecipeIds(ingredient) {
         .then(data => {
             console.log(data)
             var recipeIds = [];
+            // For loop for creating an array that contains the recipe results IDs
             for (var i = 0; i < data.length; i++) {
                 recipeIds.push(data[i].id);
             }
+            // For loop that calls the getRecipeInfo function for each index in the array
             for (var j = 0; j < recipeIds.length; j++) {
                 getRecipeInfo(recipeIds[j]);
             }
@@ -218,7 +228,7 @@ function getRecipeInfo(ids) {
                         existingRecipes = [];
                     }
                     existingRecipes.push({ 'title': response.title, 'image': response.image, 'instructions': response.instructions, 'sourceUrl': response.sourceUrl });
-            localStorage.setItem('recipes', JSON.stringify(existingRecipes));
+                    localStorage.setItem('recipes', JSON.stringify(existingRecipes));
                 }
             });
 
