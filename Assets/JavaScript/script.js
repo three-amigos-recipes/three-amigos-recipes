@@ -60,6 +60,7 @@ $('.add-ingredient-btn').click(function (event) {
                 // Array is converted to string for injecting into API call
                 var ingredientsList = ingredientListArray.join(",");
 
+                document.querySelector('.results-display').innerHTML = '';
                 getRecipeIds(ingredientsList);
                 resultsDisplayed = true;
 
