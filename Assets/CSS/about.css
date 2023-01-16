@@ -1,30 +1,104 @@
-.about {
-    margin-top: 200px;
-  }
-  
-  .about-header {
-    margin-top: 50px;
-    margin-bottom: 60px;
-    text-align: center;
-  }
-  
-  .about-t {
-    margin-top: 30px;
-    margin-bottom: 30px;
-  }
-  
-  .about-c {
-    margin-top: 30px;
-    margin-bottom: 30px;
-  }
-  
-  .about-j {
-    margin-top: 30px;
-    margin-bottom: 30px;
-  }
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap');
 
-  .navbar {
-    background-color: rgb(241, 60, 60) !important;
+* {
+  font-family: "Poppins", sans-serif;
+}
+
+.about {
+  margin-top: 200px;
+}
+  
+.about-header {
+  margin-top: 50px;
+  margin-bottom: 60px;
+  text-align: center;
+  font-size: 40px;
+  font-weight: 900;
+}
+  
+.about-taylor {
+  display: flex;
+  flex-direction: column;
+  margin-top: 30px;
+  margin-bottom: 30px;
+}
+
+.about-taylor h1 {
+  display: flex;
+  justify-content: center;
+  font-size: 25px;
+  font-weight: 500;
+}
+
+.about-taylor .ts-img-text {
+  display: flex;
+}
+
+.about-taylor img {
+  border: 5px solid black;
+  margin-left: 20px;
+}
+
+.about-taylor p {
+  margin: 20px 0 0 20px;
+}
+
+.about-chris {
+  display: flex;
+  flex-direction: column;
+  margin-top: 30px;
+  margin-bottom: 30px;
+}
+
+.about-chris h1 {
+  display: flex;
+  justify-content: center;
+  font-size: 25px;
+  font-weight: 500;
+}
+
+.about-chris .cb-img-text {
+  display: flex;
+}
+
+.about-chris img {
+  border: 5px solid black;
+  margin-left: 20px;
+}
+
+.about-chris p {
+  margin: 20px 0 0 20px;
+}
+  
+.about-jerrod {
+  display: flex;
+  flex-direction: column;
+  margin-top: 30px;
+  margin-bottom: 30px;
+}
+
+.about-jerrod h1 {
+  display: flex;
+  justify-content: center;
+  font-size: 25px;
+  font-weight: 500;
+}
+
+.about-jerrod .jb-img-text {
+  display: flex;
+}
+
+.about-jerrod img {
+  border: 5px solid black;
+  margin-left: 20px;
+}
+
+.about-jerrod p {
+  margin: 20px 0 0 20px;
+}
+
+.navbar {
+  background-color: rgb(241, 60, 60) !important;
 }
 
 .navbar-brand {
