@@ -26,7 +26,7 @@ existingRecipes.forEach(function (recipe) {
     let recipeTitle = document.createElement('h2');
     recipeTitle.innerText = recipe.title;
     recipeTitle.id = 'title';
-    recipeTitle.classList = 'card-header-title is-centered';
+    recipeTitle.classList = 'card-header-title';
 
     let recipeImg = document.createElement('img');
     recipeImg.setAttribute('src', recipe.image);
