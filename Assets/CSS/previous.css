@@ -6,28 +6,35 @@
 
 .past-results h1 {
     text-align: center;
+    font-size: 25px;
+    font-weight: 600;
     margin-top: 30px;
     padding-bottom: 20px;
 }
 
 #recipeContainer {
-    text-align: center;
-    width: 100%;
-    max-width: 1440px;
     display: flex;
     flex-direction: column;
     align-items: center;
 }
 
 .recipe-container {
+    display: flex;
+    flex-direction: column;
     background-color: rgb(247, 243, 225);
-    margin: 25px 0;
+    margin: 20px 0 0 0;
     width: 500px;
     border-radius: 10px;
     box-shadow: 3px 5px 15px rgb(165, 165, 164);
 }  
 .recipe-container:hover {
     background-color: rgb(226, 222, 204);
+}
+
+.card-header-title {
+    display: flex;
+    justify-content: center;
+    text-align: center;
 }
 
 #title {
@@ -59,4 +66,10 @@
 
 .navbar-burger {
     height: 5rem !important;
+}
+
+@media screen and (max-width: 768px) {
+    .recipe-container {
+        width: 320px;
+    }
 }
