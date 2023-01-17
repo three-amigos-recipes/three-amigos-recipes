@@ -70,3 +70,14 @@
 .menu-list a.is-active {
     background-color: #427e62;
 }
+
+
+.utensilVideo, .etiquetteVideo, .beefVideo, .chickenVideo, .porkVideo, .vegVideo, .ketoVideo, .atkinsVideo, .vegetarianVideo, .glutenVideo {
+   margin: 50px auto;
+}
+
+/* @media screen and (max-width: 768px) {
+    .recipe-container {
+        width: 320px;
+    }
+} */
