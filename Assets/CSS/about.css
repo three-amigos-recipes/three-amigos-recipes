@@ -114,3 +114,45 @@
 .navbar-burger {
   height: 5rem !important;
 }
+
+@media screen and (max-width: 768px) {
+  .about-taylor .ts-img-text {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .about-taylor img {
+    margin: 0;
+  }
+
+  .about-taylor p {
+    margin: 10px 10px;
+  }
+
+  .about-chris .cb-img-text {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .about-chris img {
+    margin: 0;
+  }
+
+  .about-chris p {
+    margin: 10px 10px;
+  }
+
+  .about-jerrod .jb-img-text {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .about-jerrod img {
+    margin: 0;
+  }
+
+  .about-jerrod p {
+    margin: 10px 10px;
+  }
+
+}
