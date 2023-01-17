@@ -19,19 +19,19 @@ existingRecipes.forEach(function (recipe) {
     // display the recipe information, for example by creating and appending elements to the DOM.
     let recipeEl = document.createElement('a');
     recipeEl.setAttribute('href', recipe.sourceUrl);
-    
+
     let recipeBox = document.createElement('div');
     recipeBox.classList = 'recipe-container';
 
     let recipeTitle = document.createElement('h2');
     recipeTitle.innerText = recipe.title;
     recipeTitle.id = 'title';
-    recipeTitle.classList = 'card-header-title';
+    recipeTitle.classList = 'card-header-title is-centered';
 
     let recipeImg = document.createElement('img');
     recipeImg.setAttribute('src', recipe.image);
     recipeImg.id = 'picture';
-    
+
     recipeBox.append(recipeTitle, recipeImg);
     recipeEl.appendChild(recipeBox);
 
@@ -39,4 +39,7 @@ existingRecipes.forEach(function (recipe) {
 });
 
 
+
+
 // See about displaying a certain amount and adding a display more option?
+
