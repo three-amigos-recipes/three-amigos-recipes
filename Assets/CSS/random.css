@@ -11,15 +11,12 @@
 
 .card {
     margin: 30px auto;
-    width: 50%;
-    max-width: 2560px ;
+    width: 500px;
     display: flex;
     flex-direction: column;
     align-items: center;
     text-align: center;
-    margin-top: 30px;
     background-color: rgb(247, 243, 225);
-    
     border-radius: 10px;
     box-shadow: 3px 5px 15px rgb(165, 165, 164);
 }
@@ -75,4 +72,10 @@
 
 .navbar-burger {
     height: 5rem !important;
+}
+
+@media screen and (max-width: 768px) {
+    .card {
+        width: 320px;
+    }
 }
