@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap');
 
 * {
-  font-family: "Poppins", sans-serif;
+    font-family: "Poppins", sans-serif;
 }
 
 
@@ -10,7 +10,7 @@
     display: block;
     width: auto;
     margin-right: auto;
- 
+
 }
 
 .intro p {
@@ -49,11 +49,12 @@
 
 .menu {
     height: 100%;
-    width: 400px;
+    width: 350px;
     float: right;
     display: block;
     border-left: solid;
     border-color: #427e62;
+    margin: 0 0 0 10px;
 }
 
 .menu-label {
@@ -72,12 +73,67 @@
 }
 
 
-.utensilVideo, .etiquetteVideo, .beefVideo, .chickenVideo, .porkVideo, .vegVideo, .ketoVideo, .atkinsVideo, .vegetarianVideo, .glutenVideo {
-   margin: 50px auto;
+.utensilVideo,
+.etiquetteVideo,
+.beefVideo,
+.chickenVideo,
+.porkVideo,
+.vegVideo,
+.ketoVideo,
+.atkinsVideo,
+.vegetarianVideo,
+.glutenVideo {
+    margin: 30px auto;
+    width: 802px;
+    height: 451px;
 }
 
-/* @media screen and (max-width: 768px) {
-    .recipe-container {
-        width: 320px;
+@media screen and (max-width: 1024px) {
+    .utensilVideo,
+    .etiquetteVideo,
+    .beefVideo,
+    .chickenVideo,
+    .porkVideo,
+    .vegVideo,
+    .ketoVideo,
+    .atkinsVideo,
+    .vegetarianVideo,
+    .glutenVideo {
+        width: 500px;
+        height: 275px;
     }
-} */
+}
+
+@media screen and (max-width: 768px) {
+    .utensilVideo,
+    .etiquetteVideo,
+    .beefVideo,
+    .chickenVideo,
+    .porkVideo,
+    .vegVideo,
+    .ketoVideo,
+    .atkinsVideo,
+    .vegetarianVideo,
+    .glutenVideo {
+        margin: 20px auto;
+        width: 350px;
+        height: 175px;
+    }
+}
+
+@media screen and (max-width: 320px) {
+    .utensilVideo,
+    .etiquetteVideo,
+    .beefVideo,
+    .chickenVideo,
+    .porkVideo,
+    .vegVideo,
+    .ketoVideo,
+    .atkinsVideo,
+    .vegetarianVideo,
+    .glutenVideo {
+        margin: 10px auto;
+        width: 300px;
+        height: 175px;
+    }
+}
