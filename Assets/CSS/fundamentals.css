@@ -4,12 +4,166 @@
     font-family: "Poppins", sans-serif;
 }
 
+.navbar {
+    background-color: rgb(241, 60, 60) !important;
+}
+
+.navbar-brand {
+    height: 80px;
+}
+
+.navbar-item img {
+    max-height: 3.5rem;
+    height: 120px;
+    width: 60px;
+}
+
+.navbar-burger {
+    height: 5rem !important;
+}
+
+main {
+    display: flex;
+    justify-content: center;
+}
+
+.btn {
+    position: absolute;
+    top: 400px;
+    left: -5px;
+    height: 45px;
+    width: 45px;
+    text-align: center;
+    background: #1b1b1b;
+    border-radius: 3px;
+    cursor: pointer;
+    transition: left 0.4s ease;
+}
+
+.btn.click {
+    left: 260px;
+}
+
+.btn span {
+    color: white;
+    font-size: 28px;
+    line-height: 45px;
+}
+
+.btn.click span:before {
+    content: '\f00d';
+}
+
+.sidebar {
+    position: fixed;
+    width: 250px;
+    height: 100%;
+    left: -250px;
+    background: #1b1b1b;
+    transition: left 0.4s ease;
+}
+
+.sidebar.show {
+    left: 0px;
+}
+
+.sidebar .text {
+    color: white;
+    font-size: 25px;
+    font-weight: 600;
+    text-align: center;
+}
+
+.sidebar ul {
+    height: 100%;
+    width: 100%;
+    list-style: none;
+}
+
+.sidebar ul li {
+    line-height: 60px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.sidebar ul li:last-child {
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.sidebar ul li a {
+    position: relative;
+    color: white;
+    text-decoration: none;
+    font-size: 20px;
+    padding-left: 20px;
+    font-weight: 500;
+    display: block;
+    width: 100%;
+    border-left: 3px solid transparent;
+}
+
+.sidebar ul li.active a {
+    color: rgb(241, 60, 60);
+    background: #1e1e1e;
+    border-left-color:rgb(241, 60, 60);
+}
+
+.sidebar ul ul {
+    position: static;
+    display: none;
+}
+
+.sidebar ul .basics-show.show {
+    display: block;
+}
+
+.sidebar ul .prepare-show.show1 {
+    display: block;
+}
+
+.sidebar ul .diet-show.show2 {
+    display: block;
+}
+
+.sidebar ul ul li {
+    line-height: 42px;
+    border-bottom: none;
+}
+
+.sidebar ul ul li a {
+    font-size: 12px;
+    padding-left: 40px;
+}
+
+.sidebar ul li.active ul li a {
+    color: white;
+    background: #1e1e1e;
+    border-left-color: transparent;
+}
+
+.sidebar ul ul li a:hover {
+    color:rgb(241, 60, 60) !important;
+    background: #1e1e1e !important;
+}
+
+.sidebar ul li a span {
+    position: absolute;
+    top: 50%;
+    right: 20px;
+    transform: translateY(-50%);
+    transition: transform 0.4s;
+}
+
+.sidebar ul li a span.rotate {
+    transform: translateY(-50%) rotate(-180deg);
+}
 
 .intro {
     text-align: center;
-    display: block;
-    width: auto;
-    margin-right: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 60%;
+    margin-right: 20px;
 
 }
 
@@ -29,48 +183,6 @@
     background: #427e62;
 }
 
-.navbar {
-    background-color: rgb(241, 60, 60) !important;
-}
-
-.navbar-brand {
-    height: 80px;
-}
-
-.navbar-item img {
-    max-height: 3.5rem;
-    height: 120px;
-    width: 60px;
-}
-
-.navbar-burger {
-    height: 5rem !important;
-}
-
-.menu {
-    height: 100%;
-    width: 350px;
-    float: right;
-    display: block;
-    border-left: solid;
-    border-color: #427e62;
-    margin: 0 0 0 10px;
-}
-
-.menu-label {
-    text-align: right;
-    background: #427e62;
-    color: white;
-    font-size: 15px;
-}
-
-.menu-list {
-    text-align: right;
-}
-
-.menu-list a.is-active {
-    background-color: #427e62;
-}
 
 
 .utensilVideo,
