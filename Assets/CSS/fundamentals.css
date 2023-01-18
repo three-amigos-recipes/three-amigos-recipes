@@ -24,7 +24,9 @@
 
 main {
     display: flex;
+    flex-direction: column;
     justify-content: center;
+    align-items: center;
 }
 
 .btn {
@@ -41,7 +43,7 @@ main {
 }
 
 .btn.click {
-    left: 260px;
+    left: 245px;
 }
 
 .btn span {
