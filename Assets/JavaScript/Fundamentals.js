@@ -80,6 +80,9 @@ utensil.addEventListener('click', function () {
     vegetarianVideo.style = 'display: none;'
     atkinsVideo.style = 'display: none;'
     glutenVideo.style = 'display: none;'
+
+    $('.btn').toggleClass('click');
+    $('.sidebar').toggleClass('show');
 });
 etiquette.addEventListener('click', function () {
     etiquetteVideo.style = 'display: block;'
@@ -92,7 +95,11 @@ etiquette.addEventListener('click', function () {
     vegetarianVideo.style = 'display: none;'
     atkinsVideo.style = 'display: none;'
     glutenVideo.style = 'display: none;'
+
+    $('.btn').toggleClass('click');
+    $('.sidebar').toggleClass('show');
 });
+
 beef.addEventListener('click', function () {
     beefVideo.style = 'display: block;'
     utensilVideo.style = 'display: none;'
@@ -104,7 +111,11 @@ beef.addEventListener('click', function () {
     vegetarianVideo.style = 'display: none;'
     atkinsVideo.style = 'display: none;'
     glutenVideo.style = 'display: none;'
+
+    $('.btn').toggleClass('click');
+    $('.sidebar').toggleClass('show');
 });
+
 chicken.addEventListener('click', function () {
     chickenVideo.style = 'display: block;'
     utensilVideo.style = 'display: none;'
@@ -116,7 +127,11 @@ chicken.addEventListener('click', function () {
     vegetarianVideo.style = 'display: none;'
     atkinsVideo.style = 'display: none;'
     glutenVideo.style = 'display: none;'
+
+    $('.btn').toggleClass('click');
+    $('.sidebar').toggleClass('show');
 });
+
 pork.addEventListener('click', function () {
     porkVideo.style = 'display: block;'
     utensilVideo.style = 'display: none;'
@@ -128,7 +143,11 @@ pork.addEventListener('click', function () {
     vegetarianVideo.style = 'display: none;'
     atkinsVideo.style = 'display: none;'
     glutenVideo.style = 'display: none;'
+
+    $('.btn').toggleClass('click');
+    $('.sidebar').toggleClass('show');
 });
+
 veggie.addEventListener('click', function () {
     vegVideo.style = 'display: block;'
     utensilVideo.style = 'display: none;'
@@ -140,7 +159,11 @@ veggie.addEventListener('click', function () {
     vegetarianVideo.style = 'display: none;'
     atkinsVideo.style = 'display: none;'
     glutenVideo.style = 'display: none;'
+
+    $('.btn').toggleClass('click');
+    $('.sidebar').toggleClass('show');
 });
+
 keto.addEventListener('click', function () {
     ketoVideo.style = 'display: block;'
     utensilVideo.style = 'display: none;'
@@ -152,7 +175,11 @@ keto.addEventListener('click', function () {
     vegetarianVideo.style = 'display: none;'
     atkinsVideo.style = 'display: none;'
     glutenVideo.style = 'display: none;'
+
+    $('.btn').toggleClass('click');
+    $('.sidebar').toggleClass('show');
 });
+
 vegetarian.addEventListener('click', function () {
     vegetarianVideo.style = 'display: block;'
     utensilVideo.style = 'display: none;'
@@ -164,7 +191,11 @@ vegetarian.addEventListener('click', function () {
     ketoVideo.style = 'display: none;'
     atkinsVideo.style = 'display: none;'
     glutenVideo.style = 'display: none;'
+
+    $('.btn').toggleClass('click');
+    $('.sidebar').toggleClass('show');
 });
+
 atkins.addEventListener('click', function () {
     atkinsVideo.style = 'display: block;'
     utensilVideo.style = 'display: none;'
@@ -176,7 +207,11 @@ atkins.addEventListener('click', function () {
     ketoVideo.style = 'display: none;'
     vegetarianVideo.style = 'display: none;'
     glutenVideo.style = 'display: none;'
+
+    $('.btn').toggleClass('click');
+    $('.sidebar').toggleClass('show');
 });
+
 gluten.addEventListener('click', function () {
     glutenVideo.style = 'display: block;'
     utensilVideo.style = 'display: none;'
@@ -188,4 +223,7 @@ gluten.addEventListener('click', function () {
     ketoVideo.style = 'display: none;'
     vegetarianVideo.style = 'display: none;'
     atkinsVideo.style = 'display: none;'
+
+    $('.btn').toggleClass('click');
+    $('.sidebar').toggleClass('show');
 });
