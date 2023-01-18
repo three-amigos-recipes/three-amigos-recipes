@@ -32,8 +32,10 @@ $('.sidebar ul li').click(function() {
 $('.btn').click(function() {
     $(this).toggleClass('click');
     $('.sidebar').toggleClass('show');
-})
+});
 
+
+var sidebar = document.querySelector('.sidebar')
 
 var utensil = document.querySelector('.utensil');
 var utensilVideo = document.querySelector('.utensilVideo');

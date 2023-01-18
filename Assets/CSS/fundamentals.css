@@ -223,24 +223,7 @@ main {
     }
 }
 
-@media screen and (max-width: 768px) {
-    .utensilVideo,
-    .etiquetteVideo,
-    .beefVideo,
-    .chickenVideo,
-    .porkVideo,
-    .vegVideo,
-    .ketoVideo,
-    .atkinsVideo,
-    .vegetarianVideo,
-    .glutenVideo {
-        margin: 20px auto;
-        width: 350px;
-        height: 175px;
-    }
-}
-
-@media screen and (max-width: 320px) {
+@media screen and (max-width: 500px) {
     .utensilVideo,
     .etiquetteVideo,
     .beefVideo,
