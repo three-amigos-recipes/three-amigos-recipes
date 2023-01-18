@@ -24,9 +24,7 @@
 
 main {
     display: flex;
-    flex-direction: column;
     justify-content: center;
-    align-items: center;
 }
 
 .btn {
@@ -157,6 +155,13 @@ main {
 
 .sidebar ul li a span.rotate {
     transform: translateY(-50%) rotate(-180deg);
+}
+
+.content-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
 .intro {
