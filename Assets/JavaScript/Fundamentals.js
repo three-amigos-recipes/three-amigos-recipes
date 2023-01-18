@@ -10,6 +10,31 @@ $(document).ready(function () {
     });
 });
 
+$('.basics-btn').click(function() {
+    $('.sidebar ul .basics-show').toggleClass('show');
+    $('.sidebar ul .first').toggleClass('rotate');
+});
+
+$('.prepare-btn').click(function() {
+    $('.sidebar ul .prepare-show').toggleClass('show1');
+    $('.sidebar ul .second').toggleClass('rotate');
+});
+
+$('.diet-btn').click(function() {
+    $('.sidebar ul .diet-show').toggleClass('show2');
+    $('.sidebar ul .third').toggleClass('rotate');
+});
+
+$('.sidebar ul li').click(function() {
+    $(this).addClass('active').siblings().removeClass('active');
+});
+
+$('.btn').click(function() {
+    $(this).toggleClass('click');
+    $('.sidebar').toggleClass('show');
+})
+
+
 var utensil = document.querySelector('.utensil');
 var utensilVideo = document.querySelector('.utensilVideo');
 var etiquette = document.querySelector('.etiquette');
