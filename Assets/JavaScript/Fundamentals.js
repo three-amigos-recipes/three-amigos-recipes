@@ -227,3 +227,8 @@ gluten.addEventListener('click', function () {
     $('.btn').toggleClass('click');
     $('.sidebar').toggleClass('show');
 });
+
+// $(document).click(function(event) {
+//     $('.btn').toggleClass('click')
+//     $('.sidebar').toggleClass('show');
+// });
