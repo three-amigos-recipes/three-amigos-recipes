@@ -1,5 +1,8 @@
 # Three Amigos Recipes
 
+## User Story
+<b>AS A</b> food lover, <b>I WANT</b> to make a foodcenteric app, that allows me to input a list of ingredients and displays recipes, <b>SO THAT</b> I may better utilize the groceries I buy, while also experimenting in the kitchen.
+
 ## Description
 The 3Amigos love to cook, but don’t always know what to cook. So, we developed an app that will throw our ingredients into the mixing pot and display recipes based on what we enter. You no longer have to go through the hassle of figuring out what to use your carrots for. Simply, throw it in the mixing pot.
 
