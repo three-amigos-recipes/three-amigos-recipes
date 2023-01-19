@@ -22,4 +22,4 @@ On the homepage of Mixing Pot the user will enter an ingredient into the search 
 <a href="https://three-amigos-recipes.github.io/three-amigos-recipes">Mixing Pot</a>
 
 ## Screenshots
-![a screenshot of the Mixing Pot home page](./Assets/images/MixingPot%20HomePage.png)
+![a screenshot of the Mixing Pot home page](./Assets/images/Untitled%20video%20-%20Made%20with%20Clipchamp.gif)
