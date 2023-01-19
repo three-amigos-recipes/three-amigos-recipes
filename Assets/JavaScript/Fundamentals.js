@@ -77,8 +77,8 @@ knifeSharpeningVideo.style = 'display: none';
 cuttingTechniquesVideo.style = 'display: none';
 
 cuttingTechniques.addEventListener('click', function() {
-    cuttingTechniquesVideo.style = 'display: block'
-    knifeSharpeningVideo.style = 'display: none'
+    cuttingTechniquesVideo.style = 'display: block;'
+    knifeSharpeningVideo.style = 'display: none;'
     utensilVideo.style = 'display: none;'
     etiquetteVideo.style = 'display: none;'
     beefVideo.style = 'display: none;'
@@ -96,7 +96,8 @@ cuttingTechniques.addEventListener('click', function() {
 
 
 knifeSharpening.addEventListener('click', function () {
-    knifeSharpeningVideo.style = 'display: block'
+    knifeSharpeningVideo.style = 'display: block;'
+    cuttingTechniquesVideo.style = 'display: none;'
     utensilVideo.style = 'display: none;'
     etiquetteVideo.style = 'display: none;'
     beefVideo.style = 'display: none;'
@@ -123,6 +124,8 @@ utensil.addEventListener('click', function () {
     vegetarianVideo.style = 'display: none;'
     atkinsVideo.style = 'display: none;'
     glutenVideo.style = 'display: none;'
+    cuttingTechniquesVideo.style = 'display: none;'
+    knifeSharpeningVideo.style = 'display: none;'
 
     $('.btn').toggleClass('click');
     $('.sidebar').toggleClass('show');
@@ -138,6 +141,8 @@ etiquette.addEventListener('click', function () {
     vegetarianVideo.style = 'display: none;'
     atkinsVideo.style = 'display: none;'
     glutenVideo.style = 'display: none;'
+    cuttingTechniquesVideo.style = 'display: none;'
+    knifeSharpeningVideo.style = 'display: none;'
 
     $('.btn').toggleClass('click');
     $('.sidebar').toggleClass('show');
@@ -154,6 +159,8 @@ beef.addEventListener('click', function () {
     vegetarianVideo.style = 'display: none;'
     atkinsVideo.style = 'display: none;'
     glutenVideo.style = 'display: none;'
+    cuttingTechniquesVideo.style = 'display: none;'
+    knifeSharpeningVideo.style = 'display: none;'
 
     $('.btn').toggleClass('click');
     $('.sidebar').toggleClass('show');
@@ -170,6 +177,8 @@ chicken.addEventListener('click', function () {
     vegetarianVideo.style = 'display: none;'
     atkinsVideo.style = 'display: none;'
     glutenVideo.style = 'display: none;'
+    cuttingTechniquesVideo.style = 'display: none;'
+    knifeSharpeningVideo.style = 'display: none;'
 
     $('.btn').toggleClass('click');
     $('.sidebar').toggleClass('show');
@@ -186,6 +195,8 @@ pork.addEventListener('click', function () {
     vegetarianVideo.style = 'display: none;'
     atkinsVideo.style = 'display: none;'
     glutenVideo.style = 'display: none;'
+    cuttingTechniquesVideo.style = 'display: none;'
+    knifeSharpeningVideo.style = 'display: none;'
 
     $('.btn').toggleClass('click');
     $('.sidebar').toggleClass('show');
@@ -202,6 +213,8 @@ veggie.addEventListener('click', function () {
     vegetarianVideo.style = 'display: none;'
     atkinsVideo.style = 'display: none;'
     glutenVideo.style = 'display: none;'
+    cuttingTechniquesVideo.style = 'display: none;'
+    knifeSharpeningVideo.style = 'display: none;'
 
     $('.btn').toggleClass('click');
     $('.sidebar').toggleClass('show');
@@ -218,6 +231,8 @@ keto.addEventListener('click', function () {
     vegetarianVideo.style = 'display: none;'
     atkinsVideo.style = 'display: none;'
     glutenVideo.style = 'display: none;'
+    cuttingTechniquesVideo.style = 'display: none;'
+    knifeSharpeningVideo.style = 'display: none;'
 
     $('.btn').toggleClass('click');
     $('.sidebar').toggleClass('show');
@@ -234,6 +249,8 @@ vegetarian.addEventListener('click', function () {
     ketoVideo.style = 'display: none;'
     atkinsVideo.style = 'display: none;'
     glutenVideo.style = 'display: none;'
+    cuttingTechniquesVideo.style = 'display: none;'
+    knifeSharpeningVideo.style = 'display: none;'
 
     $('.btn').toggleClass('click');
     $('.sidebar').toggleClass('show');
@@ -250,6 +267,8 @@ atkins.addEventListener('click', function () {
     ketoVideo.style = 'display: none;'
     vegetarianVideo.style = 'display: none;'
     glutenVideo.style = 'display: none;'
+    cuttingTechniquesVideo.style = 'display: none;'
+    knifeSharpeningVideo.style = 'display: none;'
 
     $('.btn').toggleClass('click');
     $('.sidebar').toggleClass('show');
@@ -266,6 +285,8 @@ gluten.addEventListener('click', function () {
     ketoVideo.style = 'display: none;'
     vegetarianVideo.style = 'display: none;'
     atkinsVideo.style = 'display: none;'
+    cuttingTechniquesVideo.style = 'display: none;'
+    knifeSharpeningVideo.style = 'display: none;'
 
     $('.btn').toggleClass('click');
     $('.sidebar').toggleClass('show');
