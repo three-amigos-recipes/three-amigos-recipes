@@ -57,6 +57,11 @@ var vegetarian = document.querySelector('.vegetarian');
 var vegetarianVideo = document.querySelector('.vegetarianVideo');
 var gluten = document.querySelector('.gluten');
 var glutenVideo = document.querySelector('.glutenVideo');
+var knifeSharpening = document.querySelector('.knifeSharpening');
+var knifeSharpeningVideo = document.querySelector('.knifeSharpeningVideo');
+var cuttingTechniques = document.querySelector('.cuttingTechniques');
+var cuttingTechniquesVideo = document.querySelector('.cuttingTechniquesVideo');
+
 
 utensilVideo.style = 'display: none;';
 etiquetteVideo.style = 'display: none;';
@@ -68,6 +73,44 @@ ketoVideo.style = 'display: none;';
 atkinsVideo.style = 'display: none;';
 vegetarianVideo.style = 'display: none;';
 glutenVideo.style = 'display: none;';
+knifeSharpeningVideo.style = 'display: none';
+cuttingTechniquesVideo.style = 'display: none';
+
+cuttingTechniques.addEventListener('click', function() {
+    cuttingTechniquesVideo.style = 'display: block'
+    knifeSharpeningVideo.style = 'display: none'
+    utensilVideo.style = 'display: none;'
+    etiquetteVideo.style = 'display: none;'
+    beefVideo.style = 'display: none;'
+    chickenVideo.style = 'display: none;'
+    porkVideo.style = 'display: none;'
+    vegVideo.style = 'display: none;'
+    ketoVideo.style = 'display: none;'
+    vegetarianVideo.style = 'display: none;'
+    atkinsVideo.style = 'display: none;'
+    glutenVideo.style = 'display: none;'
+
+    $('.btn').toggleClass('click');
+    $('.sidebar').toggleClass('show');
+})
+
+
+knifeSharpening.addEventListener('click', function () {
+    knifeSharpeningVideo.style = 'display: block'
+    utensilVideo.style = 'display: none;'
+    etiquetteVideo.style = 'display: none;'
+    beefVideo.style = 'display: none;'
+    chickenVideo.style = 'display: none;'
+    porkVideo.style = 'display: none;'
+    vegVideo.style = 'display: none;'
+    ketoVideo.style = 'display: none;'
+    vegetarianVideo.style = 'display: none;'
+    atkinsVideo.style = 'display: none;'
+    glutenVideo.style = 'display: none;'
+
+    $('.btn').toggleClass('click');
+    $('.sidebar').toggleClass('show');
+})
 
 utensil.addEventListener('click', function () {
     utensilVideo.style = 'display: block;'
