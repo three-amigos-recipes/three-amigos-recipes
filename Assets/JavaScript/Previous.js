@@ -63,10 +63,3 @@ function checkButton() {
 };
 
 displayRecipes();
-
-
-
-
-
-// See about displaying a certain amount and adding a display more option?
-
